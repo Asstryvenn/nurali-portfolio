@@ -1,0 +1,1147 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Нурали — сайты для бизнеса</title>
+<meta name="description" content="Сайты, Telegram-боты и моушн-дизайн для бизнеса. Астана. Портфолио: KSM, Genesis.exe, QazaqTenders, Meridian Guide.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Нурали — сайты, боты и моушн для бизнеса">
+<meta property="og:description" content="Сайты, Telegram-боты и моушн-дизайн для бизнеса. Лендинг от 100 000 ₸.">
+<meta property="og:url" content="https://asstryvenn.github.io/nurali-portfolio/">
+<meta property="og:image" content="https://asstryvenn.github.io/nurali-portfolio/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2306070b'/%3E%3Ctext x='32' y='44' font-family='Arial Black,Arial' font-weight='900' font-size='34' text-anchor='middle' fill='%23b6ff3c'%3En.%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06070b; --bg2:#0c0e15; --card:#10131c; --card2:#141826; --line:rgba(255,255,255,.08); --line2:rgba(255,255,255,.16);
+  --text:#f3f4f8; --muted:#8d92a5;
+  --a:#b6ff3c; --b:#7c5cff; --c:#ff6b4a; --d:#3ad6ff;
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{overflow-x:clip;background:var(--bg);color:var(--text);font-family:'Manrope',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{width:min(1240px,100% - 40px);margin-inline:auto}
+h1,h2,h3,.disp{font-family:'Unbounded',sans-serif;letter-spacing:-.035em;line-height:1.02}
+::selection{background:var(--a);color:#000}
+
+/* grain + ambient */
+.grain{position:fixed;inset:-50%;z-index:90;pointer-events:none;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");animation:grain 1s steps(4) infinite}
+@keyframes grain{25%{transform:translate(-3%,2%)}50%{transform:translate(2%,-3%)}75%{transform:translate(-2%,-1%)}}
+.glow{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.glow i{position:absolute;border-radius:50%;filter:blur(130px);opacity:.22;animation:drift 22s ease-in-out infinite alternate}
+.glow i:nth-child(1){width:560px;height:560px;background:var(--b);top:-180px;right:-140px}
+.glow i:nth-child(2){width:460px;height:460px;background:var(--a);top:55vh;left:-240px;opacity:.12;animation-delay:-7s}
+.glow i:nth-child(3){width:420px;height:420px;background:var(--c);bottom:-200px;right:12%;opacity:.12;animation-delay:-13s}
+@keyframes drift{to{transform:translate(80px,60px) scale(1.15)}}
+main,header,footer,nav{position:relative;z-index:1}
+
+/* progress + cursor */
+.progress{position:fixed;top:0;left:0;height:3px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,var(--a),var(--b),var(--c));z-index:100}
+.cur,.cur-ring{position:fixed;top:0;left:0;pointer-events:none;z-index:120;border-radius:50%;transform:translate(-50%,-50%);display:none}
+.cur{width:8px;height:8px;background:var(--a)}
+.cur-ring{width:42px;height:42px;border:1.5px solid rgba(182,255,60,.55);transition:width .35s var(--ease),height .35s var(--ease),background .35s,border-color .35s;display:none;place-items:center;font-size:11px;font-weight:800;color:#000;letter-spacing:.04em}
+.cur-ring.big{width:96px;height:96px;background:var(--a);border-color:var(--a)}
+.cur-ring span{opacity:0;transition:opacity .2s}
+.cur-ring.big span{opacity:1}
+@media (hover:hover) and (pointer:fine){.cur{display:block}.cur-ring{display:grid}body.has-cur,body.has-cur a,body.has-cur button{cursor:none}}
+
+/* nav */
+nav{position:fixed!important;top:16px;left:50%;transform:translateX(-50%);z-index:60;display:flex;align-items:center;gap:6px;padding:8px 8px 8px 22px;background:rgba(16,19,28,.6);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);border:1px solid var(--line);border-radius:999px;width:min(920px,100% - 24px);justify-content:space-between;transition:transform .5s var(--ease)}
+nav.hide{transform:translate(-50%,-140%)}
+.nav-r{display:flex;align-items:center;gap:8px}
+.lang{display:flex;padding:3px;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid var(--line)}
+.lang button{border:0;background:transparent;color:var(--muted);font:800 12px 'Manrope',sans-serif;letter-spacing:.06em;padding:7px 11px;border-radius:999px;cursor:pointer;transition:.25s}
+.lang button.on{background:var(--text);color:#000}
+nav .logo{font-family:'Unbounded';font-weight:800;font-size:15px}
+nav .logo b{color:var(--a)}
+nav ul{display:flex;list-style:none;gap:2px}
+nav ul a{display:block;white-space:nowrap;padding:8px 12px;border-radius:999px;font-size:14px;color:var(--muted);transition:.25s}
+nav ul a:hover{color:var(--text);background:rgba(255,255,255,.06)}
+@media(max-width:720px){nav ul{display:none}}
+
+.btn{position:relative;display:inline-flex;align-items:center;gap:10px;padding:15px 28px;border-radius:999px;font-weight:800;font-size:15px;background:var(--a);color:#0a0c06;border:0;cursor:pointer;transition:box-shadow .3s,background .3s;will-change:transform;overflow:hidden}
+.btn::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.55) 50%,transparent 70%);transform:translateX(-120%);transition:transform .7s var(--ease)}
+.btn:hover::after{transform:translateX(120%)}
+.btn:hover{box-shadow:0 14px 44px -10px rgba(182,255,60,.6)}
+.btn.sm{padding:10px 20px;font-size:14px}
+.btn.ghost{background:rgba(255,255,255,.03);color:var(--text);border:1px solid var(--line2)}
+.btn.ghost::after{background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.12) 50%,transparent 70%)}
+.btn.ghost:hover{box-shadow:none;border-color:rgba(255,255,255,.35)}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;padding:140px 0 90px}
+.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+.tag{display:inline-flex;align-items:center;gap:10px;padding:8px 16px;border:1px solid var(--line);border-radius:999px;font-size:13px;color:#c5c9d6;background:rgba(255,255,255,.03);backdrop-filter:blur(6px)}
+.tag::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--a);box-shadow:0 0 0 4px rgba(182,255,60,.18);animation:pulse 2s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 9px rgba(182,255,60,0)}}
+h1{font-size:clamp(42px,6.6vw,92px);font-weight:800;margin:26px 0}
+.w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em;margin-bottom:-.08em}
+.w>span{display:inline-block;transform:translateY(110%) rotate(6deg);transition:transform 1.1s var(--ease)}
+.ready .w>span{transform:none}
+h1 em{font-style:normal;background:linear-gradient(100deg,var(--a),#e6ff9a 40%,var(--b) 80%,var(--a));background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 6s linear infinite}
+@keyframes shine{to{background-position:-200% 0}}
+.lead{font-size:clamp(16px,1.6vw,19px);color:var(--muted);max-width:560px}
+.cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:38px}
+.stats{display:flex;gap:44px;margin-top:58px;flex-wrap:wrap}
+.stats b{display:block;font-family:'Unbounded';font-size:36px;font-weight:600}
+.stats span{font-size:13px;color:var(--muted)}
+.fade{opacity:0;transform:translateY(24px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.ready .fade{opacity:1;transform:none}
+
+/* hero 3D + photo */
+.stage{position:relative;aspect-ratio:4/5;max-width:440px;width:100%;justify-self:center;perspective:1200px}
+#orb{position:absolute;left:50%;top:50%;width:190%;height:150%;transform:translate(-50%,-50%);pointer-events:none;z-index:0}
+.photo{position:relative;z-index:2;width:100%;height:100%;border-radius:44px 44px 160px 44px;overflow:hidden;border:1px solid rgba(255,255,255,.18);background:var(--card);box-shadow:0 50px 120px -30px rgba(0,0,0,.9),0 0 0 1px rgba(0,0,0,.4) inset;transform-style:preserve-3d;transition:transform .2s linear}
+.photo img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;transform:scale(1.08)}
+.photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(6,7,11,.65)),radial-gradient(400px circle at var(--gx,30%) var(--gy,20%),rgba(255,255,255,.18),transparent 45%);pointer-events:none}
+.badge{position:absolute;z-index:3;padding:12px 18px;background:rgba(16,19,28,.78);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--line2);border-radius:18px;font-size:13px;font-weight:700;display:flex;gap:10px;align-items:center;animation:float 6s ease-in-out infinite;white-space:nowrap}
+.badge.b1{left:-38px;bottom:84px}
+.badge.b2{right:-26px;top:46px;animation-delay:-2s}
+.badge.b3{right:-14px;bottom:-18px;animation-delay:-4s}
+.badge i{width:10px;height:10px;border-radius:50%;background:var(--a);flex:none}
+.badge.b2 i{background:var(--c)}.badge.b3 i{background:var(--d)}
+@keyframes float{50%{transform:translateY(-12px)}}
+@media(max-width:940px){.hero-grid{grid-template-columns:1fr}.stage{max-width:360px;margin-top:30px}.badge.b1{left:-10px}.badge.b2{right:-10px}.badge.b3{right:0}}
+
+.scroll-hint{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);display:grid;justify-items:center;gap:8px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.scroll-hint i{width:22px;height:36px;border:1.5px solid var(--line2);border-radius:12px;position:relative}
+.scroll-hint i::after{content:"";position:absolute;left:50%;top:7px;width:4px;height:7px;border-radius:2px;background:var(--a);transform:translateX(-50%);animation:wheel 1.8s infinite}
+@keyframes wheel{to{transform:translate(-50%,12px);opacity:0}}
+
+/* marquee */
+.marquee{border-block:1px solid var(--line);padding:26px 0;overflow:hidden;background:rgba(255,255,255,.015);transform:rotate(-1.5deg);margin:20px -20px}
+.marquee div{display:flex;gap:56px;width:max-content;animation:slide 30s linear infinite;font-family:'Unbounded';font-size:clamp(20px,2.4vw,30px);font-weight:600;white-space:nowrap}
+.marquee span{color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.35)}
+.marquee span:nth-child(even){color:var(--text);-webkit-text-stroke:0}
+.marquee span::after{content:"✦";margin-left:56px;color:var(--a);-webkit-text-stroke:0}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+section{padding:130px 0}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--a);font-weight:800}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--a)}
+h2{font-size:clamp(34px,5vw,68px);font-weight:800;margin:18px 0 18px}
+.sub{color:var(--muted);max-width:560px;font-size:17px}
+.head{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(50px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.rv.in{opacity:1;transform:none}
+
+/* works */
+.works{display:grid;gap:56px;margin-top:70px}
+.work{perspective:1600px}
+.work-in{position:relative;background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:40px;padding:clamp(14px,2vw,26px);transition:transform .25s linear,border-color .4s;transform-style:preserve-3d;overflow:hidden}
+.work-in:hover{border-color:var(--line2)}
+.work-in::before{content:"";position:absolute;inset:0;background:radial-gradient(700px circle at var(--mx,50%) var(--my,0%),var(--g),transparent 45%);opacity:0;transition:opacity .4s;pointer-events:none}
+.work-in:hover::before{opacity:1}
+.c1{--g:rgba(255,184,64,.16)} .c2{--g:rgba(182,255,60,.16)} .c3{--g:rgba(124,92,255,.22)} .c4{--g:rgba(58,214,255,.16)}
+.num{position:absolute;right:30px;top:-10px;font-family:'Unbounded';font-size:clamp(90px,14vw,190px);font-weight:800;line-height:1;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.07);pointer-events:none;z-index:0}
+
+.browser{position:relative;z-index:1;border-radius:24px;background:#0a0c12;border:1px solid var(--line);overflow:hidden;box-shadow:0 50px 100px -40px rgba(0,0,0,.95)}
+.bar{height:40px;display:flex;align-items:center;gap:7px;padding:0 16px;border-bottom:1px solid var(--line);background:rgba(255,255,255,.035)}
+.bar i{width:11px;height:11px;border-radius:50%;background:#ff5f57}.bar i:nth-child(2){background:#febc2e}.bar i:nth-child(3){background:#28c840}
+.bar u{margin:0 auto;display:flex;align-items:center;gap:8px;padding:0 16px;height:24px;border-radius:8px;background:rgba(255,255,255,.06);font-size:12px;color:#aeb3c3;text-decoration:none;max-width:60%;overflow:hidden;white-space:nowrap}
+.bar u::before{content:"";width:9px;height:9px;border:1.5px solid #7ee07e;border-radius:3px}
+.bar .live{font-size:11px;font-weight:800;letter-spacing:.1em;color:var(--a);display:flex;align-items:center;gap:6px}
+.bar .live::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--a);animation:pulse 2s infinite}
+.screen{position:relative;aspect-ratio:16/9;overflow:hidden;cursor:zoom-in;background:#05060a}
+.screen video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top}
+.screen::after{content:"";position:absolute;inset:auto 0 0;height:70px;background:linear-gradient(transparent,rgba(5,6,10,.45));pointer-events:none}
+.track{position:absolute;left:0;right:0;bottom:0;height:3px;background:rgba(255,255,255,.08);z-index:2}
+.track b{position:absolute;left:0;top:0;bottom:0;width:0;background:linear-gradient(90deg,var(--a),var(--b))}
+
+/* motion section */
+.ig{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:18px;margin-top:56px}
+.igc{position:relative;border-radius:30px;padding:28px;background:var(--card);border:1px solid var(--line);overflow:hidden}
+.igc .big{font-family:'Unbounded';font-size:clamp(40px,5vw,72px);font-weight:800;line-height:1}
+.igc p{color:var(--muted);font-size:15px;margin-top:10px}
+.igc.hero-ig{background:linear-gradient(135deg,#833ab4,#fd1d1d 55%,#fcb045);border:0}
+.igc.hero-ig p{color:rgba(255,255,255,.85)}
+.igc .handle{display:inline-flex;align-items:center;gap:8px;margin-top:18px;font-weight:800;padding:9px 16px;border-radius:999px;background:rgba(0,0,0,.25);transition:.3s}
+.igc .handle:hover{background:#000}
+@media(max-width:860px){.ig{grid-template-columns:1fr}}
+.promo{position:relative;margin-top:22px;border-radius:32px;overflow:hidden;border:1px solid var(--line);aspect-ratio:16/9;cursor:pointer;background:#000}
+.promo video{width:100%;height:100%;object-fit:cover}
+.promo .lbl{position:absolute;left:24px;bottom:22px;display:flex;align-items:center;gap:14px;font-family:'Unbounded';font-weight:600;font-size:clamp(16px,2vw,24px)}
+.play{width:56px;height:56px;border-radius:50%;background:var(--a);display:grid;place-items:center;color:#000;flex:none;box-shadow:0 0 0 0 rgba(182,255,60,.5);animation:ring 2.2s infinite}
+@keyframes ring{70%{box-shadow:0 0 0 18px rgba(182,255,60,0)}100%{box-shadow:0 0 0 0 rgba(182,255,60,0)}}
+
+.hs{position:relative;height:300vh;margin-top:90px}
+.hs-sticky{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;justify-content:center;overflow:hidden}
+.hs-title{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:34px}
+.hs-title h3{font-size:clamp(26px,3.4vw,44px)}
+.hs-count{font-family:'Unbounded';color:var(--muted);font-size:14px}
+.reels{display:flex;gap:22px;padding-left:max(20px,calc((100vw - 1240px)/2));will-change:transform}
+.reel{flex:none;width:clamp(200px,21vw,290px);aspect-ratio:9/16;border-radius:30px;overflow:hidden;position:relative;border:1px solid var(--line2);background:#000;cursor:pointer;transition:transform .5s var(--ease),box-shadow .5s;box-shadow:0 30px 70px -30px rgba(0,0,0,.9)}
+.reel:hover{transform:translateY(-12px) rotate(-1.5deg);box-shadow:0 40px 90px -30px rgba(182,255,60,.35)}
+.reel video{width:100%;height:100%;object-fit:cover}
+.reel .cap{position:absolute;left:0;right:0;bottom:0;padding:50px 16px 16px;background:linear-gradient(transparent,rgba(0,0,0,.85));font-size:13px;font-weight:700}
+.reel .cap small{display:block;color:#b5b9c6;font-weight:500;font-size:12px}
+.reel .snd{position:absolute;top:12px;right:12px;font-size:11px;font-weight:800;padding:5px 10px;border-radius:999px;background:rgba(0,0,0,.55);backdrop-filter:blur(6px)}
+@media(max-width:860px),(prefers-reduced-motion:reduce){.hs{height:auto}.hs-sticky{position:relative;height:auto;padding:20px 0}.reels{overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:16px;transform:none!important}.reel{scroll-snap-align:start}}
+
+.designs{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:40px;align-items:start}
+.dcol{display:grid;gap:18px;will-change:transform}
+.dz{border-radius:22px;overflow:hidden;border:1px solid var(--line);cursor:zoom-in;transition:transform .5s var(--ease),border-color .4s;background:var(--card)}
+.dz:hover{transform:scale(1.035) rotate(.6deg);border-color:var(--line2)}
+.dz img{width:100%;height:auto}
+@media(max-width:860px){.designs{grid-template-columns:1fr 1fr}.dcol{transform:none!important}}
+.lb video{display:block;max-width:min(1240px,100%);max-height:86vh;margin:0 auto;border-radius:18px;border:1px solid var(--line)}
+.hint{position:absolute;left:16px;bottom:14px;z-index:2;font-size:12px;font-weight:700;padding:7px 12px;border-radius:999px;background:rgba(6,7,11,.75);backdrop-filter:blur(8px);border:1px solid var(--line2);opacity:0;transform:translateY(8px);transition:.35s var(--ease)}
+.work-in:hover .hint{opacity:1;transform:none}
+
+.meta{position:relative;z-index:1;display:grid;grid-template-columns:1.25fr 1fr;column-gap:56px;row-gap:14px;align-items:start;padding:30px 10px 10px}
+.meta .row{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.meta h3{font-size:clamp(28px,3.4vw,46px);font-weight:800}
+.pill{font-size:12px;padding:5px 12px;border-radius:999px;border:1px solid var(--line2);color:#c5c9d6;font-weight:700}
+.meta p{color:var(--muted);font-size:17px}
+.side{display:grid;gap:18px;align-content:start;grid-row:1/3;grid-column:2}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chips span{font-size:13px;padding:6px 13px;border-radius:999px;background:rgba(255,255,255,.05);color:#d0d4e0;border:1px solid var(--line)}
+.go{display:inline-flex;gap:10px;align-items:center;font-weight:800;font-size:15px;padding:13px 22px;border-radius:999px;border:1px solid var(--line2);width:max-content;transition:.3s}
+.go:hover{background:var(--a);color:#000;border-color:var(--a)}
+.go svg{transition:transform .3s var(--ease)}
+.go:hover svg{transform:translate(3px,-3px) rotate(0)}
+.go.off{opacity:.5;pointer-events:none}
+@media(max-width:860px){.meta{grid-template-columns:1fr}.side{grid-row:auto;grid-column:1}.num{font-size:80px;top:-4px}}
+
+.dets{position:relative;z-index:1;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
+.det{position:relative;aspect-ratio:16/10;border-radius:18px;overflow:hidden;border:1px solid var(--line);cursor:zoom-in;background:#05060a;transition:transform .5s var(--ease),border-color .4s,box-shadow .5s}
+.det img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform 1.2s var(--ease)}
+.det:hover{transform:translateY(-6px);border-color:var(--line2);box-shadow:0 30px 60px -30px rgba(0,0,0,.9)}
+.det:hover img{transform:scale(1.08)}
+.det figcaption{position:absolute;left:10px;bottom:10px;font-size:12px;font-weight:700;padding:6px 11px;border-radius:999px;background:rgba(6,7,11,.78);backdrop-filter:blur(8px);border:1px solid var(--line2)}
+@media(max-width:700px){.dets{grid-template-columns:1fr 1fr}.det:last-child{display:none}}
+
+.svc{grid-template-columns:repeat(6,1fr)!important}
+.svc>.card{grid-column:span 2}
+.svc>.card:nth-child(n+4){grid-column:span 3}
+@media(max-width:1180px){.svc>.card,.svc>.card:nth-child(n+4){grid-column:span 3}.svc>.card:last-child{grid-column:1/-1}}
+@media(max-width:640px){.svc{grid-template-columns:1fr!important}.svc>.card,.svc>.card:nth-child(n+4),.svc>.card:last-child{grid-column:auto}}
+.tiers{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:4px 0 14px}
+.tiers>div{padding:14px 16px;border-radius:16px;border:1px solid var(--line2);background:rgba(255,255,255,.03)}
+.tiers .price{margin:0 0 4px}
+.tiers span{font-size:13px;color:var(--muted);line-height:1.45;display:block}
+.bot-card{background:linear-gradient(160deg,rgba(42,171,238,.22),var(--card) 60%);border-color:rgba(42,171,238,.4)}
+
+/* bots */
+.bots{display:grid;grid-template-columns:1fr;gap:28px;margin-top:60px}
+.bot-info{max-width:640px}
+.bot{position:relative;border-radius:40px;padding:clamp(24px,3.5vw,44px);background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid var(--line);display:grid;grid-template-columns:auto 1fr;gap:clamp(28px,5vw,72px);align-items:center;overflow:hidden}
+.bot::before{content:"";position:absolute;width:340px;height:340px;border-radius:50%;filter:blur(90px);opacity:.25;background:#2aabee;left:-120px;top:-120px;pointer-events:none}
+.phone{position:relative;width:290px;aspect-ratio:9/18.5;border-radius:38px;background:#0b0f16;border:8px solid #1b2130;box-shadow:0 40px 80px -30px rgba(0,0,0,.95),0 0 0 1px rgba(255,255,255,.08);overflow:hidden;display:flex;flex-direction:column}
+.phone::before{content:"";position:absolute;top:7px;left:50%;transform:translateX(-50%);width:80px;height:20px;border-radius:12px;background:#000;z-index:3}
+.phone video{width:100%;height:100%;object-fit:cover}
+.tg-head{display:flex;align-items:center;gap:10px;padding:34px 14px 10px;background:#17212b;border-bottom:1px solid rgba(0,0,0,.4)}
+.tg-ava{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#fff,#cfd4dc);display:grid;place-items:center;color:#000;font-weight:900;font-size:13px}
+.tg-head b{font-size:13px;display:block;line-height:1.2}.tg-head span{font-size:11px;color:#6c7883}
+.tg-body{flex:1;padding:10px;display:flex;flex-direction:column;gap:6px;background:#0e1621 radial-gradient(circle at 30% 20%,rgba(42,171,238,.08),transparent 60%);overflow:hidden}
+.msg{max-width:92%;padding:8px 10px;border-radius:14px;font-size:10.5px;line-height:1.45;color:#e9edf1;opacity:0;transform:translateY(10px);transition:opacity .5s,transform .5s var(--ease)}
+.bots.in .msg{opacity:1;transform:none}
+.msg.me{align-self:flex-end;background:#2b5278;border-bottom-right-radius:4px}
+.msg.bt{align-self:flex-start;background:#182533;border-bottom-left-radius:4px}
+.msg b{color:#fff}
+.msg .hr{display:block;color:#3a4a5c;letter-spacing:-1px;overflow:hidden;white-space:nowrap}
+.msg .ok{color:#6fe39a}
+.kb{display:grid;grid-template-columns:1fr 1fr;gap:4px;max-width:92%;opacity:0;transition:opacity .5s}
+.bots.in .kb{opacity:1}
+.kb span{font-size:9.5px;text-align:center;padding:6px 4px;border-radius:8px;background:rgba(43,82,120,.55);color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.typing{align-self:flex-start;display:flex;gap:3px;padding:9px 11px;border-radius:14px;background:#182533}
+.typing i{width:5px;height:5px;border-radius:50%;background:#6c7883;animation:tp 1.2s infinite}
+.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes tp{30%{transform:translateY(-4px);background:#aab4bf}}
+.bot-info{position:relative;display:grid;gap:14px}
+.bot-info h3{font-size:clamp(22px,2.2vw,30px)}
+.bot-info .handle2{font-size:13px;color:#7cc8f5;font-weight:700}
+.bot-info p{color:var(--muted);font-size:15px}
+.bot-info ul{list-style:none;display:grid;gap:8px;font-size:14px;color:#c9cddb}
+.bot-info li::before{content:"→";color:#2aabee;margin-right:8px;font-weight:800}
+.bot-info .note{font-size:12px;color:#6f7487}
+@media(max-width:1100px){.bots{grid-template-columns:1fr}}
+@media(max-width:620px){.bot{grid-template-columns:1fr;justify-items:center}.phone{width:240px}}
+
+/* reviews */
+.rev{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:56px}
+.quote{background:var(--card);border:1px solid var(--line);border-radius:30px;padding:32px;display:grid;gap:24px;align-content:space-between}
+.quote p{font-size:17px;color:#dfe2ec}
+.who{display:flex;gap:14px;align-items:center}
+.ava{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--a),var(--b));flex:none;background-size:cover}
+.who b{display:block;font-size:15px}.who span{font-size:13px;color:var(--muted)}
+@media(max-width:900px){.rev{grid-template-columns:1fr}}
+
+/* services */
+.svc{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:60px}
+.svc .card{padding:30px}
+.svc .price{font-size:clamp(18px,1.6vw,22px);white-space:nowrap}
+.svc .price small{display:block;margin-top:2px}
+@media(max-width:1180px){.svc .price{font-size:26px}}
+@media(max-width:1180px){.svc{grid-template-columns:1fr 1fr}}
+.card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:32px;padding:36px;display:flex;flex-direction:column;gap:14px;transition:transform .4s var(--ease),border-color .4s;overflow:hidden}
+.card:hover{border-color:var(--line2);transform:translateY(-8px)}
+.card.hot{background:linear-gradient(160deg,rgba(124,92,255,.32),var(--card) 62%);border-color:rgba(124,92,255,.55)}
+.card.hot::before{content:attr(data-badge);position:absolute;top:0;right:24px;border-radius:0 0 10px 10px!important;font-size:11px;font-weight:800;padding:5px 11px;border-radius:999px;background:var(--b)}
+.card h3{font-size:22px}
+.price{font-family:'Unbounded';font-size:30px;font-weight:600;margin:6px 0;white-space:nowrap}
+.price small{font-size:14px;color:var(--muted);font-family:'Manrope';font-weight:500}
+.what{display:grid;gap:6px;padding:14px 16px;border-radius:16px;background:rgba(255,255,255,.04);border:1px dashed var(--line2);font-size:13.5px;line-height:1.5;color:#c9cddb}
+.what b{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--a)}
+.card.hot .what{background:rgba(0,0,0,.18)}
+.card ul{list-style:none;display:grid;gap:10px;color:#c9cddb;font-size:15px;margin-bottom:14px}
+.card li::before{content:"✓";color:var(--a);margin-right:10px;font-weight:800}
+.card .btn{margin-top:auto;justify-content:center}
+@media(max-width:640px){.svc{grid-template-columns:1fr}}
+
+/* process */
+.steps{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:70px}
+.line{position:absolute;left:0;right:0;top:34px;height:2px;background:var(--line)}
+.line b{position:absolute;inset:0;background:linear-gradient(90deg,var(--a),var(--b));transform-origin:0 50%;transform:scaleX(0);transition:transform 2s var(--ease)}
+.steps.in .line b{transform:scaleX(1)}
+.step{position:relative}
+.dot{width:68px;height:68px;border-radius:50%;display:grid;place-items:center;background:var(--bg2);border:1px solid var(--line2);font-family:'Unbounded';font-weight:600;font-size:18px;margin-bottom:26px;position:relative;z-index:1;transition:.5s var(--ease)}
+.steps.in .dot{border-color:var(--a);box-shadow:0 0 0 6px rgba(182,255,60,.07),0 0 40px -6px rgba(182,255,60,.5)}
+.step h3{font-size:20px;margin-bottom:8px}
+.step p{color:var(--muted);font-size:15px}
+.step em{display:inline-block;margin-top:14px;font-style:normal;font-size:12px;font-weight:800;color:var(--a);padding:4px 10px;border:1px solid rgba(182,255,60,.3);border-radius:999px}
+@media(max-width:940px){.steps{grid-template-columns:1fr 1fr;row-gap:40px}.line{display:none}}
+@media(max-width:520px){.steps{grid-template-columns:1fr}}
+
+/* about */
+.about{display:grid;grid-template-columns:.85fr 1.15fr;gap:72px;align-items:center}
+.about-photo{position:relative;border-radius:180px 40px 40px 40px;overflow:hidden;aspect-ratio:4/5;border:1px solid var(--line2)}
+.about-photo img{width:100%;height:120%;object-fit:cover;object-position:50% 25%;will-change:transform}
+.about-photo .stamp{position:absolute;right:18px;bottom:18px;width:112px;height:112px;animation:spin 16s linear infinite}
+.about-photo .stamp text{font-family:'Unbounded';font-size:10.5px;fill:#fff;letter-spacing:2px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.about-text p{color:#b8bccb;margin-bottom:16px;font-size:18px}
+.about-text p strong{color:var(--text)}
+.stack{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+.stack span{padding:9px 18px;border:1px solid var(--line);border-radius:999px;font-size:14px;background:rgba(255,255,255,.03)}
+@media(max-width:940px){.about{grid-template-columns:1fr;gap:44px}.about-photo{max-width:380px}}
+
+/* achievements bento */
+.bento{display:grid;grid-template-columns:repeat(6,1fr);gap:18px;margin-top:64px}
+.ach{position:relative;grid-column:span 2;background:var(--card);border:1px solid var(--line);border-radius:30px;padding:28px;overflow:hidden;min-height:200px;display:flex;flex-direction:column;justify-content:space-between;gap:18px;transition:transform .4s var(--ease),border-color .4s}
+.ach:hover{transform:translateY(-6px);border-color:var(--line2)}
+.ach.wide{grid-column:span 3}
+.ach .big{font-family:'Unbounded';font-size:clamp(38px,4.4vw,60px);font-weight:800;line-height:1}
+.ach h3{font-size:18px;line-height:1.25}
+.ach p{color:var(--muted);font-size:14px}
+.ach .ico{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:rgba(255,255,255,.06)}
+.ach .ico svg{width:24px;height:24px}
+.ach.lime{background:var(--a);color:#0b0d06;border-color:var(--a)}.ach.lime p{color:#2e3a12}.ach.lime .ico{background:rgba(0,0,0,.1)}
+.ach.violet{background:linear-gradient(150deg,var(--b),#4a32c9);border-color:transparent}.ach.violet p{color:#d9d1ff}
+.ach.coral{background:linear-gradient(150deg,var(--c),#d8432a);border-color:transparent}.ach.coral p{color:#ffe0d8}
+.ach .orbit{position:absolute;right:-50px;top:-50px;width:180px;height:180px;border:1px dashed rgba(255,255,255,.25);border-radius:50%;animation:spin 24s linear infinite}
+.ach .orbit::after{content:"";position:absolute;top:50%;left:-6px;width:12px;height:12px;border-radius:50%;background:currentColor}
+@media(max-width:940px){.bento{grid-template-columns:1fr 1fr}.ach,.ach.wide{grid-column:span 1}}
+@media(max-width:560px){.bento{grid-template-columns:1fr}}
+
+/* contact */
+.contact{position:relative;margin-bottom:60px;border-radius:48px;padding:clamp(48px,8vw,110px) clamp(24px,6vw,80px);text-align:center;background:var(--bg2);border:1px solid var(--line);overflow:hidden;isolation:isolate}
+.contact::before{content:"";position:absolute;inset:-60%;z-index:-1;background:conic-gradient(from 0deg,transparent,rgba(182,255,60,.35),transparent 30%,rgba(124,92,255,.45),transparent 60%,rgba(255,107,74,.3),transparent 85%);animation:spin 14s linear infinite;filter:blur(60px)}
+.contact::after{content:"";position:absolute;inset:1px;border-radius:47px;background:radial-gradient(circle at 50% 0%,rgba(16,19,28,.55),rgba(8,9,14,.92) 70%);z-index:-1}
+.contact h2{font-size:clamp(36px,6.4vw,84px);max-width:960px;margin-inline:auto}
+.contact .sub{margin:0 auto 40px}
+.links{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+footer{padding:30px 0 50px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:110;background:rgba(4,5,8,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);display:none;overflow-y:auto;padding:80px 20px 40px;overscroll-behavior:contain}
+.lb.on{display:block;animation:lbIn .4s var(--ease)}
+@keyframes lbIn{from{opacity:0}}
+.lb img{width:min(1240px,100%);margin:0 auto;border-radius:18px;border:1px solid var(--line)}
+.lb-close{position:fixed;top:18px;right:18px;z-index:111;width:52px;height:52px;border-radius:50%;border:1px solid var(--line2);background:rgba(16,19,28,.85);color:#fff;font-size:22px;cursor:pointer}
+.lb-title{position:fixed;top:24px;left:24px;z-index:111;font-family:'Unbounded';font-weight:600;font-size:15px}
+
+
+/* ===== extra motion ===== */
+.pre{position:fixed;inset:0;z-index:200;background:var(--bg);display:grid;place-items:center;transition:clip-path 1s var(--ease);clip-path:inset(0 0 0 0)}
+.pre.out{clip-path:inset(0 0 100% 0)}
+.pre-in{display:grid;justify-items:center;gap:22px}
+.pre-logo{font-family:'Unbounded';font-weight:800;font-size:clamp(34px,6vw,64px);display:flex;overflow:hidden}
+.pre-logo span{display:inline-block;transform:translateY(110%);animation:preUp .8s var(--ease) forwards}
+.pre-logo b{color:var(--a)}
+@keyframes preUp{to{transform:none}}
+.pre-bar{width:min(260px,60vw);height:2px;background:var(--line);overflow:hidden;border-radius:2px}
+.pre-bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--a),var(--b));transition:width .2s linear}
+.pre-num{font-family:'Unbounded';font-size:13px;color:var(--muted);letter-spacing:.1em}
+
+.rv h2,.rv .eyebrow{will-change:clip-path}
+.rv h2{clip-path:inset(0 0 100% 0);transform:translateY(40px);transition:clip-path 1.2s var(--ease) .1s,transform 1.2s var(--ease) .1s}
+.rv.in h2{clip-path:inset(-20% -5% -20% -5%);transform:none}
+.eyebrow::before{transition:width .9s var(--ease) .2s}
+.rv .eyebrow::before{width:0}
+.rv.in .eyebrow::before{width:26px}
+
+.sheen{position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .4s;background:radial-gradient(420px circle at var(--sx,50%) var(--sy,50%),rgba(255,255,255,.09),transparent 45%);z-index:0}
+.has-sheen:hover>.sheen{opacity:1}
+.card,.ach,.igc,.bot,.quote{position:relative}
+.card>*:not(.sheen),.igc>*:not(.sheen){position:relative;z-index:1}
+
+.det{clip-path:inset(0 0 100% 0);transition:clip-path 1s var(--ease),transform .5s var(--ease),border-color .4s,box-shadow .5s}
+.work.in .det{clip-path:inset(0 0 0 0)}
+.work.in .det:nth-child(2){transition-delay:.12s}.work.in .det:nth-child(3){transition-delay:.24s}
+.work.in .det:hover{transition-delay:0s}
+
+.marquee{transform:rotate(-1.5deg) skewX(var(--sk,0deg));transition:transform .4s var(--ease)}
+
+.band{padding:70px 0 40px;overflow:hidden;display:grid;gap:6px}
+.band-row{display:flex;gap:40px;white-space:nowrap;font-family:'Unbounded';font-weight:800;font-size:clamp(48px,9vw,140px);line-height:1;text-transform:uppercase;will-change:transform}
+.band-row span{color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.18);transition:color .4s,-webkit-text-stroke-color .4s}
+.band-row span:hover{color:var(--a);-webkit-text-stroke-color:var(--a)}
+.band-row span.f{color:var(--text);-webkit-text-stroke:0}
+.band-row i{font-style:normal;color:var(--a);-webkit-text-stroke:0}
+
+.f3d{position:absolute;pointer-events:none;z-index:0;perspective:800px}
+.cube{position:relative;width:90px;height:90px;transform-style:preserve-3d;animation:cube 14s linear infinite}
+.cube i{position:absolute;inset:0;border:1.5px solid rgba(182,255,60,.45);background:rgba(182,255,60,.04);box-shadow:inset 0 0 30px rgba(182,255,60,.12)}
+.cube i:nth-child(1){transform:translateZ(45px)}.cube i:nth-child(2){transform:rotateY(180deg) translateZ(45px)}
+.cube i:nth-child(3){transform:rotateY(90deg) translateZ(45px)}.cube i:nth-child(4){transform:rotateY(-90deg) translateZ(45px)}
+.cube i:nth-child(5){transform:rotateX(90deg) translateZ(45px)}.cube i:nth-child(6){transform:rotateX(-90deg) translateZ(45px)}
+.cube.v i{border-color:rgba(124,92,255,.6);background:rgba(124,92,255,.06);box-shadow:inset 0 0 30px rgba(124,92,255,.2)}
+@keyframes cube{to{transform:rotateX(360deg) rotateY(720deg)}}
+.tor{width:200px;height:200px;border-radius:50%;border:2px solid rgba(255,107,74,.5);transform-style:preserve-3d;animation:tor 10s linear infinite;box-shadow:0 0 40px rgba(255,107,74,.2)}
+.tor::after{content:"";position:absolute;inset:18px;border-radius:50%;border:1.5px dashed rgba(58,214,255,.5);transform:rotateX(70deg)}
+@keyframes tor{to{transform:rotateX(360deg) rotateZ(180deg)}}
+section{position:relative}
+#services .wrap,#process .wrap,#contact .wrap{position:relative;z-index:1}
+
+.phone{animation:phoneFloat 7s ease-in-out infinite;transition:transform .2s linear}
+.bot:nth-child(2) .phone{animation-delay:-3.5s}
+@keyframes phoneFloat{50%{translate:0 -12px}}
+
+nav ul a{position:relative}
+nav ul a::after{content:"";position:absolute;left:14px;right:14px;bottom:4px;height:2px;border-radius:2px;background:var(--a);transform:scaleX(0);transform-origin:right;transition:transform .4s var(--ease)}
+nav ul a:hover::after{transform:scaleX(1);transform-origin:left}
+
+.burst{position:fixed;width:8px;height:8px;border-radius:2px;pointer-events:none;z-index:150;animation:burst .9s cubic-bezier(.15,.7,.3,1) forwards}
+@keyframes burst{to{transform:translate(var(--dx),var(--dy)) rotate(var(--r));opacity:0}}
+
+.num{transition:transform .1s linear}
+.stats>div{transition:transform .4s var(--ease)}
+.stats>div:hover{transform:translateY(-6px)}
+.chips span{transition:background .3s,color .3s,transform .3s var(--ease)}
+.chips span:hover{background:var(--a);color:#000;transform:translateY(-3px)}
+.stack span{transition:background .3s,color .3s,transform .3s var(--ease)}
+.stack span:hover{background:var(--text);color:#000;transform:translateY(-3px) rotate(-2deg)}
+.step{transition:transform .5s var(--ease)}
+.step:hover{transform:translateY(-8px)}
+.step:hover .dot{background:var(--a);color:#000}
+
+@media(prefers-reduced-motion:reduce){
+  .pre{display:none}
+  .rv h2,.det{clip-path:none!important;transform:none!important}
+  .cube,.tor,.phone{animation:none!important}
+  .burst{display:none}
+  html{scroll-behavior:auto}
+  .rv,.fade,.w>span{opacity:1!important;transform:none!important;transition:none!important}
+  .marquee div,.badge,.tag::before,.grain,.glow i,.stamp,.orbit,.contact::before,h1 em{animation:none!important}
+}
+</style>
+</head>
+<body>
+<div class="pre" id="pre"><div class="pre-in"><div class="pre-logo"><span>n</span><span style="animation-delay:.04s">u</span><span style="animation-delay:.08s">r</span><span style="animation-delay:.12s">a</span><span style="animation-delay:.16s">l</span><span style="animation-delay:.2s">i</span><span style="animation-delay:.24s"><b>.</b></span><span style="animation-delay:.28s">d</span><span style="animation-delay:.32s">e</span><span style="animation-delay:.36s">v</span></div><div class="pre-bar"><i id="preBar"></i></div><div class="pre-num" id="preNum">0%</div></div></div>
+<div class="grain"></div>
+<div class="glow"><i></i><i></i><i></i></div>
+<div class="progress" id="progress"></div>
+<div class="cur" id="cur"></div><div class="cur-ring" id="ring"><span>СМОТРЕТЬ</span></div>
+
+<nav id="nav">
+  <a href="#top" class="logo">nurali<b>.</b>dev</a>
+  <ul>
+    <li><a href="#works">Сайты</a></li>
+    <li><a href="#bots">Боты</a></li>
+    <li><a href="#motion">Моушн</a></li>
+    <li><a href="#about">Обо мне</a></li>
+    <li><a href="#services">Услуги</a></li>
+    <li><a href="#process">Процесс</a></li>
+  </ul>
+  <div class="nav-r">
+    <div class="lang" role="group" aria-label="Язык / Тіл"><button type="button" data-l="ru" class="on">RU</button><button type="button" data-l="kz">KZ</button></div>
+    <a href="#contact" class="btn sm mag">Связаться</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="tag fade">Принимаю заказы · свободные слоты открыты</span>
+      <h1 id="h1">Сайты, которые <em>приводят клиентов</em> вашему бизнесу</h1>
+      <p class="lead fade" style="transition-delay:.5s">Проектирую, дизайню и разрабатываю сайты для компаний, а ещё делаю моушн-видео и дизайн для соцсетей. От завода стекла и зеркал до тендерных платформ. Быстро, аккуратно, под ключ.</p>
+      <div class="cta fade" style="transition-delay:.65s">
+        <a href="#works" class="btn mag">Смотреть работы
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#contact" class="btn ghost mag">Обсудить проект</a>
+      </div>
+      <div class="stats fade" style="transition-delay:.8s">
+        <div><b data-count="3">0</b><span>года в IT</span></div>
+        <div><b data-count="5">0</b><span>лет в дизайне</span></div>
+        <div><b>7–14</b><span>дней на запуск</span></div>
+              </div>
+    </div>
+    <div class="stage fade" id="stage" style="transition-delay:.3s">
+      <canvas id="orb"></canvas>
+      <div class="photo" id="photo"><img src="photos/me.jpg" alt="Нурали — веб-разработчик"></div>
+      <div class="badge b1"><i></i>Отвечаю в течение часа</div>
+      <div class="badge b2"><i></i>Дизайн + код под ключ</div>
+      <div class="badge b3"><i></i>Топ-6 из 200 команд</div>
+    </div>
+  </div>
+  <div class="scroll-hint"><i></i>Листайте</div>
+</header>
+
+<div class="marquee" aria-hidden="true">
+  <div>
+    <span>Корпоративные сайты</span><span>Лендинги</span><span>Веб-платформы</span><span>Интернет-магазины</span><span>Сервисы с AI</span><span>Telegram-боты</span><span>Моушн-дизайн</span><span>3D и анимации</span>
+    <span>Корпоративные сайты</span><span>Лендинги</span><span>Веб-платформы</span><span>Интернет-магазины</span><span>Сервисы с AI</span><span>Telegram-боты</span><span>Моушн-дизайн</span><span>3D и анимации</span>
+  </div>
+</div>
+
+<main>
+<section id="works">
+  <div class="wrap">
+    <div class="head rv">
+      <div>
+        <span class="eyebrow">Избранные работы</span>
+        <h2>Проекты, которые<br>уже работают</h2>
+      </div>
+      <p class="sub">Это записи живых сайтов с их настоящими анимациями. Нажмите на экран, чтобы открыть страницу целиком.</p>
+    </div>
+
+    <div class="works">
+
+      <article class="work rv">
+        <div class="work-in c1">
+          <span class="num">01</span>
+          <div class="browser">
+            <div class="bar"><i></i><i></i><i></i><u>kazsteklomontazh.kz</u><span class="live">LIVE</span></div>
+            <div class="screen" data-title="KSM КазСтеклоМонтаж" data-full="shots/ksm-full.jpg"><video src="shots/ksm.mp4" poster="shots/ksm.jpg" muted loop playsinline preload="metadata" aria-label="Сайт KSM КазСтеклоМонтаж"></video><div class="track"><b></b></div><span class="hint">Клик — открыть весь сайт</span></div>
+          </div>
+          <div class="meta">
+            <div class="row"><h3>KSM КазСтеклоМонтаж</h3><span class="pill">Сайт компании</span></div>
+            <p>Сайт производства стекла и зеркал в Астане: каталог со 100+ позициями и ценами, калькулятор стоимости за минуту, галерея моделей зеркал, заявки со статусами, личный кабинет и админ-панель.</p>
+            <div class="side">
+              <div class="chips"><span>Корпоративный сайт</span><span>Каталог</span><span>Калькулятор</span><span>Админ-панель</span><span>RU / KZ</span></div>
+              <a class="go" href="https://kazsteklomontazh.kz" target="_blank" rel="noopener">kazsteklomontazh.kz <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+            </div>
+          </div>
+          <div class="dets"><figure class="det"><img src="shots/details/ksm-calc.jpg" alt="Калькулятор стекла" loading="lazy"><figcaption>Калькулятор стекла</figcaption></figure><figure class="det"><img src="shots/details/ksm-catalog.jpg" alt="Каталог с ценами" loading="lazy"><figcaption>Каталог с ценами</figcaption></figure><figure class="det"><img src="shots/details/ksm-mirrors.jpg" alt="Модели зеркал с LED" loading="lazy"><figcaption>Модели зеркал с LED</figcaption></figure></div>
+        </div>
+      </article>
+
+      <article class="work rv">
+        <div class="work-in c2">
+          <span class="num">02</span>
+          <div class="browser">
+            <div class="bar"><i></i><i></i><i></i><u>genesis-exe.com</u><span class="live">LIVE</span></div>
+            <div class="screen" data-title="Genesis.exe" data-full="shots/genesis-full.jpg"><video src="shots/genesis.mp4" poster="shots/genesis.jpg" muted loop playsinline preload="metadata" aria-label="Сайт хакатона Genesis.exe"></video><div class="track"><b></b></div><span class="hint">Клик — открыть весь сайт</span></div>
+          </div>
+          <div class="meta">
+            <div class="row"><h3>Genesis.exe</h3><span class="pill">Сайт хакатона</span></div>
+            <p>Сайт хакатона с призовым фондом 2,4 млн ₸: таймер регистрации, запись команд, личный кабинет, спонсоры и таймлайн. Яркий пиксельный киберпанк-дизайн и анимации.</p>
+            <div class="side">
+              <div class="chips"><span>Лендинг</span><span>Личный кабинет</span><span>Регистрация</span><span>Анимации</span></div>
+              <a class="go" href="https://genesis-exe.com" target="_blank" rel="noopener">genesis-exe.com <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+            </div>
+          </div>
+          <div class="dets"><figure class="det"><img src="shots/details/gen-hero.jpg" alt="3D-маскот" loading="lazy"><figcaption>3D-маскот</figcaption></figure><figure class="det"><img src="shots/details/gen-prize.jpg" alt="Призовой фонд" loading="lazy"><figcaption>Призовой фонд</figcaption></figure><figure class="det"><img src="shots/details/gen-sponsors.jpg" alt="Спонсоры и таймлайн" loading="lazy"><figcaption>Спонсоры и таймлайн</figcaption></figure></div>
+        </div>
+      </article>
+
+      <article class="work rv">
+        <div class="work-in c3">
+          <span class="num">03</span>
+          <div class="browser">
+            <div class="bar"><i></i><i></i><i></i><u>qazaqtenders</u><span class="live">DEMO</span></div>
+            <div class="screen" data-title="QazaqTenders" data-full="shots/qazaq-full.jpg"><video src="shots/qazaq.mp4" poster="shots/qazaq.jpg" muted loop playsinline preload="metadata" aria-label="Платформа QazaqTenders"></video><div class="track"><b></b></div><span class="hint">Клик — открыть весь сайт</span></div>
+          </div>
+          <div class="meta">
+            <div class="row"><h3>QazaqTenders</h3><span class="pill">Платформа</span></div>
+            <p>Платформа для поиска тендеров и оценки их выгодности: рейтинг каждого лота, данные с 6 площадок, фильтры, карта тендеров по регионам Казахстана, интерфейс на казахском и русском.</p>
+            <div class="side">
+              <div class="chips"><span>Веб-платформа</span><span>Аналитика</span><span>Карта</span><span>KZ / RU</span></div>
+              <span class="go off">Ссылка скоро</span>
+            </div>
+          </div>
+          <div class="dets"><figure class="det"><img src="shots/details/qz-filters.jpg" alt="Профиль и фильтры" loading="lazy"><figcaption>Профиль и фильтры</figcaption></figure><figure class="det"><img src="shots/details/qz-tenders.jpg" alt="Рейтинг тендеров" loading="lazy"><figcaption>Рейтинг тендеров</figcaption></figure><figure class="det"><img src="shots/details/qz-map.jpg" alt="Карта по регионам" loading="lazy"><figcaption>Карта по регионам</figcaption></figure></div>
+        </div>
+      </article>
+
+      <article class="work rv">
+        <div class="work-in c4">
+          <span class="num">04</span>
+          <div class="browser">
+            <div class="bar"><i></i><i></i><i></i><u>meridianguide.online</u><span class="live">LIVE</span></div>
+            <div class="screen" data-title="Meridian Guide" data-full="shots/meridian-full.jpg"><video src="shots/meridian.mp4" poster="shots/meridian.jpg" muted loop playsinline preload="metadata" aria-label="Meridian Guide — навигатор по университетам"></video><div class="track"><b></b></div><span class="hint">Клик — открыть весь сайт</span></div>
+          </div>
+          <div class="meta">
+            <div class="row"><h3>Meridian Guide</h3><span class="pill">Веб-приложение</span></div>
+            <p>Навигатор по поступлению: анализирует оценки, тесты и бюджет, подбирает университеты (Dream / Target / Safety), оценивает шансы с помощью ML и даёт понятный следующий шаг.</p>
+            <div class="side">
+              <div class="chips"><span>Веб-приложение</span><span>ML-оценка</span><span>AI-помощник</span><span>Каталог вузов</span></div>
+              <a class="go" href="https://meridianguide.online" target="_blank" rel="noopener">meridianguide.online <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+            </div>
+          </div>
+          <div class="dets"><figure class="det"><img src="shots/details/mer-hero.jpg" alt="Карточки шансов" loading="lazy"><figcaption>Карточки шансов</figcaption></figure><figure class="det"><img src="shots/details/mer-catalog.jpg" alt="Каталог университетов" loading="lazy"><figcaption>Каталог университетов</figcaption></figure><figure class="det"><img src="shots/details/mer-steps.jpg" alt="Как это работает" loading="lazy"><figcaption>Как это работает</figcaption></figure></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="bots">
+  <div class="wrap">
+    <div class="head rv">
+      <div>
+        <span class="eyebrow">Telegram-боты</span>
+        <h2>Боты, которые<br>работают за вас</h2>
+      </div>
+      <p class="sub">Делаю ботов от простых до сложных: с AI, базой данных и связью с сайтом. Вот два моих бота.</p>
+    </div>
+    <div class="bots" id="botsGrid">
+
+      <article class="bot rv">
+        <div class="phone">
+          <div class="tg-head"><div class="tg-ava">QT</div><div><b>QazaqTenders AI</b><span>бот</span></div></div>
+          <div class="tg-body" data-i18n="botchat">
+            <div class="msg me" style="transition-delay:.2s">🎤 Найди тендер на канцтовары, у нас ТОО в Астане</div>
+            <div class="msg bt" style="transition-delay:.8s">🏛 <b>Поставка канцелярских товаров и расходных материалов</b><br>Заказчик: Аппарат акима г. Алматы<br>📍 Алматы · 💰 12,4 млн ₸ · ⏳ до 12.09<span class="hr">━━━━━━━━━━━━━━━━━━━</span>🎯 <b>TOS 72,7</b>/100 ▰▰▰▰▰▰▰▱▱▱<br>🟢 Участвовать<br>💵 Чистая прибыль: <b>1,8 млн ₸</b> · маржа <b>14,5%</b><br>🕳 Кассовый разрыв: <b>Нет</b> <span class="ok">✅</span><br>🚚 Газель · 1 218 км · 3 дн.<br>⚖️ Главный риск: не найдено</div>
+            <div class="kb" style="transition-delay:1.3s"><span>📊 Полный разбор</span><span>🚀 Ссылка на лот</span><span>🧪 «Что если?»</span><span>🚚 Доставка</span><span>🏷️ Поставщики</span><span>❌ Не подходит</span></div>
+            <div class="typing"><i></i><i></i><i></i></div>
+          </div>
+        </div>
+        <div class="bot-info">
+          <span class="handle2">AI-ассистент для госзакупок</span>
+          <h3>QazaqTenders AI-бот</h3>
+          <p>Понимает голосовые, PDF и DOCX с техзаданием и ссылки на лоты. Оценивает тендер под профиль компании и отвечает карточкой с готовыми цифрами.</p>
+          <ul><li>Рейтинг выгодности TOS, прибыль и маржа</li><li>Кассовый разрыв, логистика и главный риск</li><li>Симулятор «Что если?» и подбор поставщиков</li><li>Ежедневный дайджест новых тендеров</li><li>Казахский и русский язык</li></ul>
+          <div class="chips"><span>Python · aiogram 3</span><span>OpenAI · Whisper</span><span>FastAPI</span><span>Связан с сайтом</span></div>
+          <span class="note">Карточка — настоящий ответ бота на демо-данных.</span>
+        </div>
+      </article>
+
+      <article class="bot rv">
+        <div class="phone"><video data-src="motion/bot-guide.mp4" poster="motion/bot-guide.jpg" muted loop playsinline preload="none"></video></div>
+        <div class="bot-info">
+          <span class="handle2">@genesis_hack_bot</span>
+          <h3>Бот хакатона Genesis.exe</h3>
+          <p>Помощник для участников хакатона: все сроки, кабинет и ответы в одну кнопку. Связан с сайтом genesis-exe.com и его личным кабинетом.</p>
+          <ul><li>Вход в личный кабинет в один клик</li><li>Сроки, частые вопросы и данные команды</li><li>Автоматические напоминания о дедлайнах</li><li>Возврат оплаты и поддержка</li><li>Команды для организаторов</li></ul>
+          <div class="chips"><span>Node.js</span><span>Telegram Bot API</span><span>База данных</span><span>Связан с сайтом</span></div>
+          <a class="go" href="#" data-video="motion/bot-guide.mp4" data-title="Гайд по Telegram-боту" id="botVideoBtn">Смотреть гайд со звуком <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="motion">
+  <div class="wrap">
+    <div class="head rv">
+      <div>
+        <span class="eyebrow">Моушн-дизайн и графика</span>
+        <h2>5 лет в дизайне</h2>
+      </div>
+      <p class="sub">Кроме сайтов делаю моушн-видео, 3D-ролики, рилсы и дизайн для соцсетей. Ниже работы для бренда Genesis.exe: вся айдентика, видео и посты сделаны мной.</p>
+    </div>
+
+    <div class="ig">
+      <div class="igc hero-ig rv">
+        <div class="big"><span data-count="147">0</span> тыс.</div>
+        <p>просмотров в Instagram за последние 30 дней</p>
+        <a class="handle" href="https://www.instagram.com/genesis.studio.kz/" target="_blank" rel="noopener">@genesis.studio.kz ↗</a>
+      </div>
+      <div class="igc rv"><div class="big" style="color:var(--a)"><span data-count="1184">0</span></div><p>подписчиков в аккаунте хакатона</p></div>
+      <div class="igc rv"><div class="big" style="color:#b9a8ff"><span data-count="37">0</span></div><p>публикаций: рилсы, посты, сторис</p></div>
+    </div>
+
+    <div class="promo rv" data-video="motion/promo.mp4" data-title="Промо Genesis.exe">
+      <video data-src="motion/promo.mp4" poster="motion/promo.jpg" muted loop playsinline preload="none"></video>
+      <div class="lbl"><span class="play"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>Промо-ролик Genesis.exe · смотреть со звуком</div>
+    </div>
+  </div>
+
+  <div class="hs" id="hs">
+    <div class="hs-sticky">
+      <div class="wrap hs-title"><h3>Рилсы и 3D-ролики</h3><span class="hs-count">10 видео · листайте вниз</span></div>
+      <div class="reels" id="reels">
+          <div class="reel" data-video="motion/site-trailer.mp4" data-title="Трейлер сайта"><video data-src="motion/site-trailer.mp4" poster="motion/site-trailer.jpg" muted loop playsinline preload="none"></video><span class="snd">▶ со звуком</span><div class="cap">Трейлер сайта<small>Genesis.exe · 1:00</small></div></div>
+          <div class="reel" data-video="motion/offline-3d.mp4" data-title="3D-ролик офлайн-финала"><video data-src="motion/offline-3d.mp4" poster="motion/offline-3d.jpg" muted loop playsinline preload="none"></video><span class="snd">▶ со звуком</span><div class="cap">3D-ролик офлайн-финала<small>3D · 1:02</small></div></div>
+          <div class="reel" data-video="motion/reel-squid.mp4" data-title="«Игра в кальмара»"><video data-src="motion/reel-squid.mp4" poster="motion/reel-squid.jpg" muted loop playsinline preload="none"></video><span class="snd">▶ со звуком</span><div class="cap">«Игра в кальмара»<small>Рилс · воксельная 3D-анимация</small></div></div>
+          <div class="reel" data-video="motion/reel-thanos.mp4" data-title="«Танос»"><video data-src="motion/reel-thanos.mp4" poster="motion/reel-thanos.jpg" muted loop playsinline preload="none"></video><span class="snd">▶ со звуком</span><div class="cap">«Танос»<small>Рилс · 3D-персонажи</small></div></div>
+          <div class="reel" data-video="motion/reel-66h.mp4" data-title="«66 часов»"><video data-src="motion/reel-66h.mp4" poster="motion/reel-66h.jpg" muted loop playsinline preload="none"></video><span class="snd">▶ со звуком</span><div class="cap">«66 часов»<small>Рилс · сторителлинг</small></div></div>
+          <div class="reel" data-video="motion/reel-bybit.mp4" data-title="«Взлом Bybit»"><video data-src="motion/reel-bybit.mp4" poster="motion/reel-bybit.jpg" muted loop playsinline preload="none"></video><span class="snd">▶ со звуком</span><div class="cap">«Взлом Bybit»<small>Рилс · моушн-инфографика</small></div></div>
+          <div class="reel" data-video="motion/reel-flight.mp4" data-title="«Полёт»"><video data-src="motion/reel-flight.mp4" poster="motion/reel-flight.jpg" muted loop playsinline preload="none"></video><span class="snd">▶ со звуком</span><div class="cap">«Полёт»<small>Рилс · 3D + озвучка</small></div></div>
+          <div class="reel" data-video="motion/reel-site.mp4" data-title="«Сайт полетит»"><video data-src="motion/reel-site.mp4" poster="motion/reel-site.jpg" muted loop playsinline preload="none"></video><span class="snd">▶ со звуком</span><div class="cap">«Сайт полетит»<small>Рилс · анонс</small></div></div>
+          <div class="reel" data-video="motion/sudo-snow.mp4" data-title="Sudo под снегом"><video data-src="motion/sudo-snow.mp4" poster="motion/sudo-snow.jpg" muted loop playsinline preload="none"></video><span class="snd">▶ со звуком</span><div class="cap">Sudo под снегом<small>3D-маскот</small></div></div>
+          <div class="reel" data-video="motion/bot-guide.mp4" data-title="Гайд по Telegram-боту"><video data-src="motion/bot-guide.mp4" poster="motion/bot-guide.jpg" muted loop playsinline preload="none"></video><span class="snd">▶ со звуком</span><div class="cap">Гайд по Telegram-боту<small>Рилс · UI-анимация</small></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="hs-title rv" style="margin-top:40px"><h3 style="font-size:clamp(26px,3.4vw,44px)">Посты, постеры и стикеры</h3><span class="hs-count">18 работ</span></div>
+    <div class="designs" id="designs"><div class="dcol" data-speed="0.06"><div class="dz"><img src="motion/designs/13_prize-pool_2400000_hq.jpg" alt="Дизайн для Genesis.exe" loading="lazy"></div><div class="dz"><img src="motion/designs/02_facts_bylo-takoe.jpg" alt="Дизайн для Genesis.exe" loading="lazy"></div><div class="dz"><img src="motion/designs/18_free-reg-until-10nov_post_hq.jpg" alt="Дизайн для Genesis.exe" loading="lazy"></div><div class="dz"><img src="motion/designs/GENESIS_stickerpack_sheet.jpg" alt="Дизайн для Genesis.exe" loading="lazy"></div><div class="dz"><img src="motion/designs/28_post_200plus-tg-chat.jpg" alt="Дизайн для Genesis.exe" loading="lazy"></div></div><div class="dcol" data-speed="-0.04"><div class="dz"><img src="motion/designs/05_reel-cover_vertical.jpg" alt="Дизайн для Genesis.exe" loading="lazy"></div><div class="dz"><img src="motion/designs/23_poster-A4_prize-pool-trophy_print.jpg" alt="Дизайн для Genesis.exe" loading="lazy"></div><div class="dz"><img src="motion/designs/29_reel_cover_site-poletit.jpg" alt="Дизайн для Genesis.exe" loading="lazy"></div><div class="dz"><img src="motion/designs/20_poster-A4_qr-form-ig_print.jpg" alt="Дизайн для Genesis.exe" loading="lazy"></div><div class="dz"><img src="motion/designs/30_story_check-email.jpg" alt="Дизайн для Genesis.exe" loading="lazy"></div></div><div class="dcol" data-speed="0.08"><div class="dz"><img src="motion/designs/14_find-team_telegram-chat_hq.jpg" alt="Дизайн для Genesis.exe" loading="lazy"></div><div class="dz"><img src="motion/designs/16_chat-live_story_hq.jpg" alt="Дизайн для Genesis.exe" loading="lazy"></div><div class="dz"><img src="motion/designs/06_meet-our-sponsors_kazsteklomontazh.jpg" alt="Дизайн для Genesis.exe" loading="lazy"></div><div class="dz"><img src="motion/designs/25_registration_paid-3000.jpg" alt="Дизайн для Genesis.exe" loading="lazy"></div></div><div class="dcol" data-speed="-0.02"><div class="dz"><img src="motion/designs/GENESIS_stickerpack_mockup.jpg" alt="Дизайн для Genesis.exe" loading="lazy"></div><div class="dz"><img src="motion/designs/27_post_spots-20of50.jpg" alt="Дизайн для Genesis.exe" loading="lazy"></div><div class="dz"><img src="motion/designs/35_post_deadline-3days_11-spots.jpg" alt="Дизайн для Genesis.exe" loading="lazy"></div><div class="dz"><img src="motion/designs/34_prizes_language-perspectives.jpg" alt="Дизайн для Genesis.exe" loading="lazy"></div></div></div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap about">
+    <div class="about-photo rv">
+      <img src="photos/me.jpg" alt="Нурали" id="aboutImg">
+      <svg class="stamp" viewBox="0 0 120 120" aria-hidden="true">
+        <defs><path id="circ" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs>
+        <circle cx="60" cy="60" r="58" fill="rgba(6,7,11,.6)"/>
+        <text><textPath href="#circ">WEB · DESIGN · CODE · 3D · AI · </textPath></text>
+        <circle cx="60" cy="60" r="8" fill="#b6ff3c"/>
+      </svg>
+    </div>
+    <div class="about-text rv">
+      <span class="eyebrow">Обо мне</span>
+      <h2>Привет, я Нурали</h2>
+      <p data-i18n="about1">Учусь в <strong>11 классе Назарбаевской Интеллектуальной школы</strong> (район Нура, Астана). Уже <strong>5 лет в дизайне и 3 года в IT</strong>, работаю фрилансером: сделал сайты для многих компаний, от производства стекла до тендерной платформы.</p>
+      <p data-i18n="about2">Параллельно развиваю свои стартапы. Защищал проект на <strong>чемпионате мира и Global Pitch в Македонии</strong>, выступал на <strong>форуме AI Digital Bridge</strong>, вошёл в <strong>топ-6 из 200 команд</strong> на республиканском хакатоне.</p>
+      <p>Поэтому смотрю на сайт как предприниматель: он должен приносить заявки, а не просто красиво выглядеть.</p>
+      <div class="stack"><span>HTML / CSS / JS</span><span>React / Next.js</span><span>Node.js</span><span>UI/UX-дизайн</span><span>3D и анимации</span><span>Моушн-дизайн</span><span>AI-интеграции</span></div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="bento">
+      <div class="ach lime wide rv">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 01-10 0V4zM17 5h3v2a3 3 0 01-3 3M7 5H4v2a3 3 0 003 3"/></svg></div>
+        <div><div class="big">Топ-6 / 200</div><h3>Финалист республиканского хакатона по стартапам</h3></div>
+      </div>
+      <div class="ach violet wide rv">
+        <span class="orbit"></span>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18"/></svg></div>
+        <div><h3>Чемпионат мира и Global Pitch</h3><p>Защищал стартап на международном этапе в Македонии</p></div>
+      </div>
+      <div class="ach rv">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#b6ff3c" stroke-width="2"><path d="M12 2l3 6.5 7 .9-5.1 4.8 1.3 7L12 17.8 5.8 21.2l1.3-7L2 9.4l7-.9z"/></svg></div>
+        <div><div class="big" style="color:var(--a)">1 место</div><h3>Дарын РНПЦ</h3><p>за школьный проект</p></div>
+      </div>
+      <div class="ach coral rv">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 18v-2a8 8 0 0116 0v2M12 8v4M8 4l1.5 2M16 4l-1.5 2"/><rect x="2" y="18" width="20" height="3" rx="1"/></svg></div>
+        <div><h3>AI Digital Bridge</h3><p>Выступление на форуме и защита стартапа</p></div>
+      </div>
+      <div class="ach rv">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#3ad6ff" stroke-width="2"><path d="M22 10L12 5 2 10l10 5 10-5zM6 12v5c3 2 9 2 12 0v-5"/></svg></div>
+        <div><div class="big"><span data-count="4.7" data-dec="1">0</span></div><h3>GPA</h3><p>English B2–C1</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="f3d" data-par="0.12" style="right:6%;top:90px"><div class="cube"><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+  <div class="f3d" data-par="-0.08" style="left:3%;bottom:120px;transform:scale(.6)"><div class="cube v"><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+  <div class="wrap">
+    <div class="head rv">
+      <div>
+        <span class="eyebrow">Услуги</span>
+        <h2>Что я сделаю<br>для вашего бизнеса</h2>
+      </div>
+      <p class="sub">Точная стоимость зависит от задачи. Назову её после короткого разговора.</p>
+    </div>
+    <div class="svc">
+      <div class="card rv">
+        <h3>Лендинг</h3>
+        <p class="sub" style="font-size:15px">Одностраничный сайт под услугу, акцию или мероприятие.</p>
+        <div class="what"><b>Что это?</b><span>Одна страница под одно предложение. Человек листает вниз, видит выгоду, работы, отзывы и сразу оставляет заявку. Лучше всего подходит для рекламы в Instagram и Google, акций и мероприятий.</span></div>
+        <div class="price">от 100 000 ₸</div>
+        <ul><li>Дизайн под ваш бренд</li><li>Анимации и адаптив</li><li>Заявки в Telegram / WhatsApp</li><li>Срок: 5–7 дней</li></ul>
+        <a href="#contact" class="btn ghost">Заказать</a>
+      </div>
+      <div class="card hot rv" data-badge="Популярно">
+        <h3>Сайт компании</h3>
+        <p class="sub" style="font-size:15px">Многостраничный сайт: услуги, каталог, портфолио, контакты.</p>
+        <div class="what"><b>Что это?</b><span>Полноценный сайт о вашем бизнесе из нескольких страниц: услуги, каталог с ценами, работы, «о нас» и контакты. Он работает как продавец 24/7 и вызывает доверие у новых клиентов.</span></div>
+        <div class="price">от 200 000 ₸</div>
+        <ul><li>Уникальный дизайн и 3D-акценты</li><li>Каталог и калькулятор</li><li>SEO-основа и скорость</li><li>Срок: 10–14 дней</li></ul>
+        <a href="#contact" class="btn">Заказать</a>
+      </div>
+      <div class="card rv">
+        <h3>Веб-платформа</h3>
+        <p class="sub" style="font-size:15px">Сервисы со своей логикой, как QazaqTenders или Meridian.</p>
+        <div class="what"><b>Что это?</b><span>Сайт-сервис, которым люди пользуются, а не просто читают: личные кабинеты, база данных, поиск, расчёты и админ-панель. Подходит, когда нужно автоматизировать работу или запустить свой продукт.</span></div>
+        <div class="price">от 400 000 ₸</div>
+        <ul><li>Проектирование и UX</li><li>Личные кабинеты и админка</li><li>AI и аналитика</li><li>Срок: по договорённости</li></ul>
+        <a href="#contact" class="btn ghost">Обсудить</a>
+      </div>
+      <div class="card rv">
+        <h3>Моушн и SMM-дизайн</h3>
+        <p class="sub" style="font-size:15px">Рилсы, 3D-ролики, посты и айдентика, как для Genesis.exe.</p>
+        <div class="what"><b>Что это?</b><span>Анимированные видео и графика для Instagram, TikTok и рекламы: рилсы, 3D-ролики, посты и сторис в едином фирменном стиле. Помогает набрать охваты и выделиться в ленте.</span></div>
+        <div class="price">от 40 000 ₸ <small>/ ролик</small></div>
+        <ul><li>Моушн-видео и 3D</li><li>Посты, сторис, постеры</li><li>Фирменный стиль и стикеры</li><li>Срок: от 3 дней</li></ul>
+        <a href="#contact" class="btn ghost">Заказать</a>
+      </div>
+      <div class="card bot-card rv">
+        <h3>Telegram-боты</h3>
+        <p class="sub" style="font-size:15px">Боты для заявок, записи, рассылок и поддержки клиентов.</p>
+        <div class="what"><b>Что это?</b><span>Помощник внутри Telegram, который работает за вас 24/7: отвечает на вопросы, принимает заявки и записи, присылает напоминания и уведомления. Клиенту не нужно ничего скачивать, он просто пишет боту.</span></div>
+        <div class="tiers">
+          <div><div class="price">от 40 000 ₸</div><span>Простой бот: меню, ответы на вопросы, заявки</span></div>
+          <div><div class="price">от 100 000 ₸</div><span>Бот + сайт или сложная логика: кабинет, база данных, AI</span></div>
+        </div>
+        <a href="#contact" class="btn ghost">Заказать бота</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="f3d" data-par="0.1" style="right:8%;top:60px"><div class="tor"></div></div>
+  <div class="wrap">
+    <div class="rv">
+      <span class="eyebrow">Как я работаю</span>
+      <h2>Понятно и без сюрпризов</h2>
+    </div>
+    <div class="steps" id="steps">
+      <div class="line"><b></b></div>
+      <div class="step"><div class="dot">01</div><h3>Бриф</h3><p>Обсуждаем задачу, аудиторию и цели. Фиксирую смету и сроки.</p><em>1 день</em></div>
+      <div class="step"><div class="dot">02</div><h3>Дизайн</h3><p>Показываю дизайн главной страницы и правлю до вашего «да».</p><em>2–4 дня</em></div>
+      <div class="step"><div class="dot">03</div><h3>Разработка</h3><p>Верстаю, программирую и показываю промежуточный результат.</p><em>3–7 дней</em></div>
+      <div class="step"><div class="dot">04</div><h3>Запуск</h3><p>Домен, хостинг, проверка. Остаюсь на связи после запуска.</p><em>1 день</em></div>
+    </div>
+  </div>
+</section>
+
+<!-- ОТЗЫВЫ: блок скрыт (атрибут hidden), пока нет настоящих отзывов с разрешения людей.
+     Чтобы включить: впишите текст, имя и должность и удалите слово hidden. -->
+<section id="reviews" hidden>
+  <div class="wrap">
+    <div class="rv">
+      <span class="eyebrow">Отзывы</span>
+      <h2>Что говорят заказчики</h2>
+    </div>
+    <div class="rev">
+      <div class="quote rv"><p>«ТЕКСТ ОТЗЫВА»</p><div class="who"><div class="ava"></div><div><b>Имя Фамилия</b><span>Должность, KSM КазСтеклоМонтаж</span></div></div></div>
+      <div class="quote rv"><p>«ТЕКСТ ОТЗЫВА»</p><div class="who"><div class="ava"></div><div><b>Имя Фамилия</b><span>Роль, Genesis.exe</span></div></div></div>
+      <div class="quote rv"><p>«ТЕКСТ ОТЗЫВА»</p><div class="who"><div class="ava"></div><div><b>Имя Фамилия</b><span>Компания</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="band" aria-hidden="true">
+  <div class="band-row" data-dir="1"><span class="f">Сайты</span><i>✦</i><span>Боты</span><i>✦</i><span class="f">Моушн</span><i>✦</i><span>3D</span><i>✦</i><span class="f">Дизайн</span><i>✦</i><span>AI</span><i>✦</i><span class="f">Сайты</span><i>✦</i><span>Боты</span><i>✦</i><span class="f">Моушн</span><i>✦</i><span>3D</span></div>
+  <div class="band-row" data-dir="-1"><span>Дизайн</span><i>✦</i><span class="f">AI</span><i>✦</i><span>Сайты</span><i>✦</i><span class="f">Боты</span><i>✦</i><span>Моушн</span><i>✦</i><span class="f">3D</span><i>✦</i><span>Дизайн</span><i>✦</i><span class="f">AI</span><i>✦</i><span>Сайты</span><i>✦</i><span class="f">Боты</span></div>
+</div>
+
+<section id="contact" style="padding-top:40px">
+  <div class="f3d" data-par="-0.1" style="left:6%;top:30px;transform:scale(.7)"><div class="cube"><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+  <div class="wrap">
+    <div class="contact rv">
+      <span class="eyebrow">Давайте работать</span>
+      <h2>Расскажите о задаче, и я предложу решение</h2>
+      <p class="sub">Напишите в удобный мессенджер. Отвечу в течение часа и назову сроки и стоимость.</p>
+      <div class="links">
+        <a class="btn mag" href="https://t.me/lethevx" target="_blank" rel="noopener">Telegram @lethevx</a>
+        <a class="btn ghost mag" href="https://wa.me/77020516535" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn ghost mag" href="tel:+77020516535">+7 702 051 65 35</a>      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap"><span>© 2026 Нурали. Астана, Казахстан.</span><span>Дизайн, код и 3D сделаны вручную</span></div>
+</footer>
+
+<div class="lb" id="lb"><span class="lb-title" id="lbt"></span><button class="lb-close" id="lbc" aria-label="Закрыть">✕</button><img alt="" id="lbi"></div>
+
+<script src="kz.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(()=>{
+const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const FINE = matchMedia('(hover:hover) and (pointer:fine)').matches;
+const $ = (s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+
+/* split headline into words */
+const h1=$('#h1');const H1_RU=h1.innerHTML;
+function split(node){
+  [...node.childNodes].forEach(n=>{
+    if(n.nodeType===3){
+      const f=document.createDocumentFragment();
+      n.textContent.split(/(\s+)/).forEach(t=>{
+        if(!t)return; if(/^\s+$/.test(t)){f.append(t);return}
+        const w=document.createElement('span');w.className='w';const i=document.createElement('span');i.textContent=t;w.append(i);f.append(w);
+      });
+      n.replaceWith(f);
+    } else split(n);
+  });
+}
+split(h1);
+$$('.w>span',h1).forEach((s,i)=>s.style.transitionDelay=(0.12+i*0.07)+'s');
+
+/* RU / KZ */
+const KZ=window.KZ||{},KZH=window.KZ_HTML||{},TITLE_RU=document.title;
+const tnodes=[],anodes=[],hnodes=$$('[data-i18n]').map(el=>[el,el.innerHTML]);
+(function collect(n){for(const c of n.childNodes){
+  if(c.nodeType===3){const k=c.nodeValue.trim();if(k&&KZ[k])tnodes.push([c,c.nodeValue,k])}
+  else if(c.nodeType===1&&!/^(SCRIPT|STYLE)$/.test(c.tagName)&&c.id!=='h1'&&!c.hasAttribute('data-i18n'))collect(c)}})(document.body);
+$$('[data-title],[data-badge]').forEach(el=>['data-title','data-badge'].forEach(a=>{const v=el.getAttribute(a);if(v&&KZ[v])anodes.push([el,a,v])}));
+function setLang(l){
+  const kz=l==='kz';
+  tnodes.forEach(([n,ru,k])=>n.nodeValue=kz?ru.replace(k,KZ[k]):ru);
+  anodes.forEach(([el,a,ru])=>el.setAttribute(a,kz?KZ[ru]:ru));
+  hnodes.forEach(([el,ru])=>el.innerHTML=kz&&KZH[el.dataset.i18n]?KZH[el.dataset.i18n]:ru);
+  h1.innerHTML=kz?window.KZ_H1:H1_RU;split(h1);
+  document.documentElement.lang=kz?'kk':'ru';document.title=kz?window.KZ_TITLE:TITLE_RU;
+  $$('.lang button').forEach(b=>b.classList.toggle('on',b.dataset.l===l));
+  try{localStorage.setItem('lang',l)}catch(e){}
+}
+$$('.lang button').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.l)));
+let saved='ru';try{saved=localStorage.getItem('lang')||'ru'}catch(e){}
+if(saved==='kz')setLang('kz');
+(function preloader(){
+  const pre=$('#pre'),bar=$('#preBar'),num=$('#preNum');
+  if(RM||!pre){pre&&pre.remove();document.body.classList.add('ready');return}
+  let v=0,done=false;const t0=performance.now();
+  const finish=()=>{if(done)return;done=true;bar.style.width='100%';num.textContent='100%';
+    setTimeout(()=>{pre.classList.add('out');document.body.classList.add('ready');setTimeout(()=>pre.remove(),1100)},250)};
+  (function tick(){if(done)return;const el=performance.now()-t0;v=Math.min(96,v+(100-v)*.06);bar.style.width=v+'%';num.textContent=Math.round(v)+'%';
+    if(el>1300&&document.readyState==='complete')return finish();if(el>3200)return finish();requestAnimationFrame(tick)})();
+  addEventListener('load',()=>{if(performance.now()-t0>1300)finish()});
+})();
+
+/* count up */
+function countUp(el){
+  const to=parseFloat(el.dataset.count),dec=+(el.dataset.dec||0),suf=el.dataset.suffix||'';
+  if(RM){el.textContent=to.toFixed(dec)+suf;return}
+  const t0=performance.now(),d=1600;
+  (function f(t){const p=Math.min(1,(t-t0)/d),e=1-Math.pow(1-p,4);el.textContent=(to*e).toFixed(dec)+suf;if(p<1)requestAnimationFrame(f)})(t0);
+}
+
+/* reveal on scroll */
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting)return;
+  e.target.classList.add('in');
+  $$('[data-count]',e.target).forEach(countUp);
+  io.unobserve(e.target);
+}),{threshold:.14});
+$$('.rv').forEach((el,i)=>{el.style.transitionDelay=((i%3)*90)+'ms';io.observe(el)});
+io.observe($('#steps'));io.observe($('#botsGrid'));
+setTimeout(()=>$$('.stats [data-count]').forEach(countUp),2000);
+
+/* progress + nav hide */
+let lastY=0;const nav=$('#nav'),prog=$('#progress');
+addEventListener('scroll',()=>{
+  const y=scrollY,h=document.documentElement.scrollHeight-innerHeight;
+  prog.style.transform=`scaleX(${h>0?y/h:0})`;
+  nav.classList.toggle('hide',y>lastY&&y>400);lastY=y;
+},{passive:true});
+
+/* cursor */
+const cur=$('#cur'),ring=$('#ring');
+let mx=innerWidth/2,my=innerHeight/2,rx=mx,ry=my;
+if(FINE){
+  document.body.classList.add('has-cur');
+  addEventListener('pointermove',e=>{mx=e.clientX;my=e.clientY;cur.style.transform=`translate(${mx}px,${my}px) translate(-50%,-50%)`});
+  (function loop(){rx+=(mx-rx)*.16;ry+=(my-ry)*.16;ring.style.transform=`translate(${rx}px,${ry}px) translate(-50%,-50%)`;requestAnimationFrame(loop)})();
+  $$('.screen').forEach(s=>{s.addEventListener('pointerenter',()=>ring.classList.add('big'));s.addEventListener('pointerleave',()=>ring.classList.remove('big'))});
+}
+
+/* magnetic buttons */
+if(FINE&&!RM)$$('.mag').forEach(b=>{
+  b.addEventListener('pointermove',e=>{const r=b.getBoundingClientRect();b.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.25}px,${(e.clientY-r.top-r.height/2)*.35}px)`});
+  b.addEventListener('pointerleave',()=>{b.style.transition='transform .5s cubic-bezier(.2,.8,.2,1)';b.style.transform='';setTimeout(()=>b.style.transition='',500)});
+});
+
+/* hero photo tilt */
+const stage=$('#stage'),photo=$('#photo');
+if(FINE&&!RM)addEventListener('pointermove',e=>{
+  const r=stage.getBoundingClientRect(),x=(e.clientX-(r.left+r.width/2))/innerWidth,y=(e.clientY-(r.top+r.height/2))/innerHeight;
+  photo.style.transform=`rotateY(${x*14}deg) rotateX(${-y*12}deg)`;
+  photo.style.setProperty('--gx',(50+x*80)+'%');photo.style.setProperty('--gy',(30+y*80)+'%');
+});
+
+/* card tilt + glow */
+if(FINE&&!RM)$$('.work-in').forEach(c=>{
+  c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+    c.style.setProperty('--mx',(x+.5)*100+'%');c.style.setProperty('--my',(y+.5)*100+'%');
+    c.style.transform=`rotateY(${x*4}deg) rotateX(${-y*3}deg)`});
+  c.addEventListener('pointerleave',()=>c.style.transform='');
+});
+
+/* videos: load + play only while visible */
+const vio=new IntersectionObserver(es=>es.forEach(e=>{
+  const v=e.target;
+  if(e.isIntersecting){
+    if(v.dataset.src&&!v.src){v.src=v.dataset.src}
+    if(!RM){const p=v.play();if(p)p.catch(()=>{})}
+  } else v.pause();
+}),{threshold:.2});
+$$('video').forEach(v=>vio.observe(v));
+
+/* site recordings: progress bar + click to see full page */
+$$('.screen').forEach(el=>{
+  const v=$('video',el),bar=$('.track b',el);
+  v.addEventListener('timeupdate',()=>{if(v.duration)bar.style.width=(v.currentTime/v.duration*100)+'%'});
+  el.addEventListener('click',()=>openLb({img:el.dataset.full,title:el.dataset.title}));
+});
+
+/* motion: reels / promo open with sound, designs zoom */
+$('#botVideoBtn').addEventListener('click',e=>{e.preventDefault();openLb({video:'motion/bot-guide.mp4',title:e.currentTarget.dataset.title})});
+$$('.reel,.promo').forEach(el=>el.addEventListener('click',()=>openLb({video:el.dataset.video,title:el.dataset.title})));
+$$('.det').forEach(f=>f.addEventListener('click',()=>openLb({img:$('img',f).src,title:$('figcaption',f).textContent})));
+$$('.dz img').forEach(i=>i.parentElement.addEventListener('click',()=>openLb({img:i.src,title:'Дизайн · Genesis.exe'})));
+if(FINE)$$('.reel,.promo,.dz,.det').forEach(s=>{s.addEventListener('pointerenter',()=>ring.classList.add('big'));s.addEventListener('pointerleave',()=>ring.classList.remove('big'))});
+
+/* horizontal scroll for reels + parallax design columns */
+const hs=$('#hs'),reels=$('#reels'),dcols=$$('.dcol');
+const wideMotion=()=>!RM&&innerWidth>860;
+function onScroll(){
+  if(wideMotion()){
+    const r=hs.getBoundingClientRect(),max=reels.scrollWidth-innerWidth+80;
+    const p=Math.min(1,Math.max(0,-r.top/(r.height-innerHeight)));
+    reels.style.transform=`translate3d(${-p*Math.max(0,max)}px,0,0)`;
+    const dr=$('#designs').getBoundingClientRect(),dp=(dr.top+dr.height/2-innerHeight/2);
+    dcols.forEach(c=>c.style.transform=`translate3d(0,${dp*parseFloat(c.dataset.speed)}px,0)`);
+  }
+}
+addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',onScroll);onScroll();
+
+/* lightbox (image or video) */
+const lb=$('#lb'),lbi=$('#lbi'),lbt=$('#lbt'),lbv=document.createElement('video');
+lbv.controls=true;lbv.playsInline=true;lb.append(lbv);
+function openLb({img,video,title}){
+  lbt.textContent=title||'';lb.scrollTop=0;
+  if(video){lbi.style.display='none';lbv.style.display='block';lbv.src=video;lbv.muted=false;lbv.play().catch(()=>{})}
+  else{lbv.style.display='none';lbv.pause();lbi.style.display='block';lbi.src=img}
+  lb.classList.add('on');document.body.style.overflow='hidden';
+}
+function closeLb(){lb.classList.remove('on');lbv.pause();lbv.removeAttribute('src');lbv.load();document.body.style.overflow=''}
+$('#lbc').addEventListener('click',closeLb);
+lb.addEventListener('click',e=>{if(e.target===lb)closeLb()});
+addEventListener('keydown',e=>{if(e.key==='Escape')closeLb()});
+
+/* about parallax */
+const aimg=$('#aboutImg');
+if(!RM)addEventListener('scroll',()=>{const r=aimg.parentElement.getBoundingClientRect();const p=(r.top+r.height/2-innerHeight/2)/innerHeight;aimg.style.transform=`translateY(${-10+p*-12}%)`},{passive:true});
+
+
+/* ===== extra motion ===== */
+// spotlight sheen on cards
+$$('.card,.ach,.igc,.bot,.quote,.work-in').forEach(el=>{
+  if(!$(':scope>.sheen',el)){const sh=document.createElement('span');sh.className='sheen';el.prepend(sh)}
+  el.classList.add('has-sheen');
+  el.addEventListener('pointermove',e=>{const r=el.getBoundingClientRect();el.style.setProperty('--sx',e.clientX-r.left+'px');el.style.setProperty('--sy',e.clientY-r.top+'px')});
+});
+// 3D tilt for cards & phones
+if(FINE&&!RM)$$('.card,.ach,.igc').forEach(el=>{
+  el.addEventListener('pointermove',e=>{const r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+    el.style.transition='transform .15s linear,border-color .4s';el.style.transform=`perspective(900px) rotateY(${x*8}deg) rotateX(${-y*8}deg) translateY(-6px)`});
+  el.addEventListener('pointerleave',()=>{el.style.transition='transform .6s cubic-bezier(.2,.8,.2,1),border-color .4s';el.style.transform=''});
+});
+if(FINE&&!RM)$$('.bot').forEach(b=>{const ph=$('.phone',b);
+  b.addEventListener('pointermove',e=>{const r=b.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;ph.style.transform=`perspective(1000px) rotateY(${x*18}deg) rotateX(${-y*12}deg)`});
+  b.addEventListener('pointerleave',()=>ph.style.transform='')});
+// click burst on buttons
+if(!RM)document.addEventListener('click',e=>{
+  const b=e.target.closest('.btn,.go,.lang button');if(!b)return;
+  const cols=['#b6ff3c','#7c5cff','#ff6b4a','#3ad6ff','#ffffff'];
+  for(let i=0;i<16;i++){const d=document.createElement('i');d.className='burst';const a=Math.random()*Math.PI*2,r=50+Math.random()*90;
+    d.style.left=e.clientX+'px';d.style.top=e.clientY+'px';d.style.background=cols[i%cols.length];
+    d.style.setProperty('--dx',Math.cos(a)*r+'px');d.style.setProperty('--dy',Math.sin(a)*r+'px');d.style.setProperty('--r',(Math.random()*540-270)+'deg');
+    document.body.append(d);setTimeout(()=>d.remove(),950)}
+});
+// work cards: observe for detail reveal
+$$('.work').forEach(w=>io.observe(w));
+// scroll-driven: marquee skew, band rows, parallax shapes, big numbers, section glow colors
+const mq=$('.marquee'),bands=$$('.band-row'),pars=$$('[data-par]'),nums=$$('.num'),glowI=$$('.glow i');
+const glowMap={top:['#7c5cff','#b6ff3c','#ff6b4a'],works:['#ffb840','#7c5cff','#3ad6ff'],bots:['#2aabee','#7c5cff','#b6ff3c'],motion:['#b6ff3c','#7c5cff','#ff6b4a'],about:['#7c5cff','#ff6b4a','#b6ff3c'],services:['#3ad6ff','#b6ff3c','#7c5cff'],process:['#b6ff3c','#ff6b4a','#7c5cff'],contact:['#ff6b4a','#7c5cff','#b6ff3c']};
+glowI.forEach(g=>g.style.transition='background 1.4s ease');
+const gio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const c=glowMap[e.target.id];if(c)glowI.forEach((g,i)=>g.style.background=c[i])}}),{rootMargin:'-45% 0px -45% 0px'});
+['top','works','bots','motion','about','services','process','contact'].forEach(id=>{const el=document.getElementById(id);el&&gio.observe(el)});
+let py=scrollY,vel=0;
+if(!RM)(function sl(){
+  const y=scrollY;vel+=((y-py)-vel)*.12;py=y;
+  const sk=Math.max(-8,Math.min(8,vel*.25));mq.style.setProperty('--sk',sk+'deg');
+  bands.forEach(r=>{const rr=r.parentElement.getBoundingClientRect();const p=(innerHeight-rr.top)/(innerHeight+rr.height);r.style.transform=`translate3d(${(r.dataset.dir==='1'?-1:1)*p*500+(r.dataset.dir==='1'?0:-500)}px,0,0)`});
+  pars.forEach(el=>{const r=el.parentElement.getBoundingClientRect();el.style.translate=`0 ${(r.top)*parseFloat(el.dataset.par)}px`});
+  nums.forEach(n=>{const r=n.parentElement.getBoundingClientRect();n.style.transform=`translateY(${(r.top-innerHeight/2)*-.08}px)`});
+  requestAnimationFrame(sl);
+})();
+
+/* ===== 3D orb (Three.js) ===== */
+if(!window.THREE)return;
+const canvas=$('#orb');
+const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true});
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+const scene=new THREE.Scene();
+const camera=new THREE.PerspectiveCamera(38,1,.1,100);camera.position.z=8;
+const group=new THREE.Group();scene.add(group);
+
+const blobMat=new THREE.ShaderMaterial({
+  uniforms:{t:{value:0},m:{value:new THREE.Vector2()}},
+  vertexShader:`
+    uniform float t;uniform vec2 m;varying vec3 vN;varying float vD;varying vec3 vP;
+    float w(vec3 p){return sin(p.x*2.1+t*.9)*sin(p.y*2.4+t*1.1)*sin(p.z*1.9+t*.7);}
+    void main(){
+      vec3 p=position;float d=w(p)*.32+sin(length(p.xy-m*1.5)*3.0-t*2.0)*.06;
+      p+=normal*d;vD=d;vN=normalize(normalMatrix*normal);
+      vec4 mv=modelViewMatrix*vec4(p,1.);vP=-mv.xyz;gl_Position=projectionMatrix*mv;}`,
+  fragmentShader:`
+    uniform float t;varying vec3 vN;varying float vD;varying vec3 vP;
+    void main(){
+      vec3 n=normalize(vN),v=normalize(vP);float fr=pow(1.-max(dot(n,v),0.),2.2);
+      vec3 lime=vec3(.71,1.,.24),vio=vec3(.49,.36,1.),cor=vec3(1.,.42,.29),cy=vec3(.23,.84,1.);
+      float k=.5+.5*sin(n.y*3.+n.x*2.+t*.6+vD*6.);
+      vec3 base=mix(vio,lime,k);base=mix(base,cor,smoothstep(.55,1.,sin(n.x*4.-t*.5)*.5+.5)*.45);
+      vec3 col=base*(.18+.55*max(dot(n,normalize(vec3(.4,.8,.6))),0.))+fr*mix(cy,lime,k)*1.25;
+      gl_FragColor=vec4(col,.96);}`,
+  transparent:true
+});
+const blob=new THREE.Mesh(new THREE.IcosahedronGeometry(1.9,48),blobMat);group.add(blob);
+
+const wire=new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.IcosahedronGeometry(2.45,1)),new THREE.LineBasicMaterial({color:0xb6ff3c,transparent:true,opacity:.22}));
+group.add(wire);
+
+const ringG=new THREE.TorusGeometry(2.9,.012,8,180);
+const ring1=new THREE.Mesh(ringG,new THREE.MeshBasicMaterial({color:0x7c5cff,transparent:true,opacity:.7}));ring1.rotation.x=1.25;group.add(ring1);
+const ring2=new THREE.Mesh(ringG,new THREE.MeshBasicMaterial({color:0xff6b4a,transparent:true,opacity:.45}));ring2.rotation.set(.4,.9,0);ring2.scale.setScalar(1.12);group.add(ring2);
+const moon=new THREE.Mesh(new THREE.SphereGeometry(.13,24,24),new THREE.MeshBasicMaterial({color:0xb6ff3c}));group.add(moon);
+
+const N=FINE?1400:600,pos=new Float32Array(N*3);
+for(let i=0;i<N;i++){const r=2.6+Math.random()*2.6,th=Math.random()*Math.PI*2,ph=Math.acos(2*Math.random()-1);pos.set([r*Math.sin(ph)*Math.cos(th),r*Math.sin(ph)*Math.sin(th),r*Math.cos(ph)],i*3)}
+const pg=new THREE.BufferGeometry();pg.setAttribute('position',new THREE.BufferAttribute(pos,3));
+const pts=new THREE.Points(pg,new THREE.PointsMaterial({color:0xd9ffa0,size:.025,transparent:true,opacity:.7,blending:THREE.AdditiveBlending,depthWrite:false}));
+scene.add(pts);
+
+function size(){const w=canvas.clientWidth,h=canvas.clientHeight;renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix()}
+size();addEventListener('resize',size);
+let tx=0,ty=0,sx=0,sy=0,visible=true;
+new IntersectionObserver(e=>visible=e[0].isIntersecting).observe(canvas);
+addEventListener('pointermove',e=>{tx=e.clientX/innerWidth-.5;ty=e.clientY/innerHeight-.5});
+const clock=new THREE.Clock();
+function render(){
+  const t=clock.getElapsedTime();
+  sx+=(tx-sx)*.05;sy+=(ty-sy)*.05;
+  blobMat.uniforms.t.value=t;blobMat.uniforms.m.value.set(sx*2,-sy*2);
+  const sc=scrollY*.0015;
+  group.rotation.y=t*.18+sx*.9+sc;group.rotation.x=sy*.6+sc*.4;
+  wire.rotation.y=-t*.12;wire.rotation.z=t*.05;
+  ring1.rotation.z=t*.3;ring2.rotation.z=-t*.22;
+  moon.position.set(Math.cos(t*.8)*3.05,Math.sin(t*.8)*1.0,Math.sin(t*.8)*2.6);
+  pts.rotation.y=t*.03;pts.rotation.x=t*.015;
+  renderer.render(scene,camera);
+}
+if(RM){render()}else{(function loop(){if(visible)render();requestAnimationFrame(loop)})()}
+})();
+</script>
+</body>
+</html>
