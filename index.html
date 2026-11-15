@@ -436,6 +436,42 @@ nav ul a:hover::after{transform:scaleX(1);transform-origin:left}
 .step:hover{transform:translateY(-8px)}
 .step:hover .dot{background:var(--a);color:#000}
 
+
+/* ===== phone fixes ===== */
+.works,.bots,.designs,.svc,.bento,.ig{min-width:0}
+.works{grid-template-columns:minmax(0,1fr)}
+.bots{grid-template-columns:minmax(0,1fr)}
+.work,.work-in,.bot,.meta,.browser,.bot-info{min-width:0}
+.bar u{min-width:0;text-overflow:ellipsis}
+@media(max-width:640px){
+  section{padding:90px 0}
+  .tiers{grid-template-columns:1fr}
+  .promo{aspect-ratio:4/5}
+  .promo .lbl{font-size:15px;left:16px;right:16px;bottom:16px}
+  .promo .play{width:46px;height:46px}
+  .work-in{border-radius:28px;padding:12px}
+  .browser{border-radius:16px}
+  .bar{height:32px;padding:0 10px}.bar i{width:8px;height:8px}.bar u{font-size:10px;padding:0 8px;height:20px}
+  .meta{padding:22px 6px 6px}
+  .meta p{font-size:15px}
+  .meta h3{font-size:26px;overflow-wrap:anywhere}
+  .bot-info h3{font-size:22px}
+  .num{font-size:64px;right:16px}
+  .dets{gap:8px}.det figcaption{font-size:10px;padding:4px 8px;left:6px;bottom:6px}
+  .igc .big{font-size:44px}
+  .contact h2{font-size:32px}
+  .links .btn{width:100%;justify-content:center}
+  .band-row{font-size:44px}
+  .bot{padding:20px;border-radius:30px}
+  .hs-title{flex-direction:column;align-items:flex-start;gap:6px}
+  h2{font-size:clamp(30px,8.4vw,40px)}
+  .head{gap:14px}
+  .stats{gap:26px;margin-top:40px}.stats b{font-size:30px}
+  nav{padding:6px 6px 6px 16px}
+  .lang button{padding:6px 9px}
+  .btn.sm{padding:9px 14px;font-size:13px}
+}
+
 @media(prefers-reduced-motion:reduce){
   .pre{display:none}
   .rv h2,.det{clip-path:none!important;transform:none!important}
