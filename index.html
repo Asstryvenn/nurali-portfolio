@@ -42,9 +42,17 @@ img,video{display:block;max-width:100%}
 .burger i::before,.burger i::after{content:"";position:absolute;left:0}
 .burger i::before{top:-5px}.burger i::after{top:5px}
 body.menu .burger i{background:transparent}body.menu .burger i::before{top:0;transform:rotate(45deg)}body.menu .burger i::after{top:0;transform:rotate(-45deg)}
-.sheet{position:fixed;inset:0;z-index:40;background:var(--bg);display:flex;flex-direction:column;justify-content:center;gap:6px;padding:0 24px;opacity:0;pointer-events:none;transition:opacity .3s}
-.sheet a{font-size:34px;font-weight:500;letter-spacing:-.03em}
-body.menu .sheet{opacity:1;pointer-events:auto}
+.sheet{position:fixed;inset:0;z-index:45;background:var(--bg);display:flex;flex-direction:column;justify-content:space-between;padding:90px 20px 34px;clip-path:circle(0 at calc(100% - 36px) 32px);transition:clip-path .6s cubic-bezier(.7,0,.2,1);visibility:hidden}
+body.menu .sheet{clip-path:circle(150% at calc(100% - 36px) 32px);visibility:visible}
+body.menu{overflow:hidden}
+.sheet-links{display:flex;flex-direction:column}
+.sheet-links a{display:flex;align-items:baseline;gap:14px;padding:10px 0;border-bottom:1px solid var(--soft);font-size:32px;font-weight:500;letter-spacing:-.035em;opacity:0;transform:translateY(18px);transition:opacity .4s,transform .5s cubic-bezier(.2,.8,.2,1)}
+.sheet-links a i{font-style:normal;font-size:12px;color:var(--mute);letter-spacing:0;width:22px}
+body.menu .sheet-links a{opacity:1;transform:none}
+body.menu .sheet-links a:nth-child(1){transition-delay:.18s}body.menu .sheet-links a:nth-child(2){transition-delay:.22s}body.menu .sheet-links a:nth-child(3){transition-delay:.26s}body.menu .sheet-links a:nth-child(4){transition-delay:.3s}body.menu .sheet-links a:nth-child(5){transition-delay:.34s}body.menu .sheet-links a:nth-child(6){transition-delay:.38s}body.menu .sheet-links a:nth-child(7){transition-delay:.42s}
+.sheet-foot{display:flex;gap:8px;opacity:0;transition:opacity .4s .45s}
+body.menu .sheet-foot{opacity:1}
+.sheet-foot .btn{flex:1;justify-content:center;padding:14px}
 
 /* hero */
 .hero{min-height:100svh;display:grid;place-items:center;text-align:center;padding:110px 0 120px}
@@ -174,10 +182,10 @@ section{padding:40px 0 70px;scroll-margin-top:60px}
 .lb-t{position:fixed;top:26px;left:24px;font-size:14px;font-weight:500;z-index:101}
 
 @media(max-width:1100px){.g5{grid-template-columns:repeat(3,minmax(0,1fr))}.g6{grid-template-columns:repeat(4,minmax(0,1fr))}.about{grid-template-columns:1fr}}
+@media(max-width:900px){.nav{display:none}.burger{display:grid}}
 @media(max-width:760px){
   .wrap{width:calc(100% - 32px)}
   .top{inset:12px 16px auto}
-  .nav{display:none}.burger{display:grid}
   .g2,.g3{grid-template-columns:1fr}
   .g5{grid-template-columns:repeat(2,minmax(0,1fr))}
   .g6{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -206,13 +214,20 @@ section{padding:40px 0 70px;scroll-margin-top:60px}
     <button class="burger" id="burger" aria-label="Меню"><i></i></button>
   </div>
 </header>
-<div class="sheet" id="sheet">
-  <a href="#about" data-t="n_about">Обо мне</a>
-  <a href="#sites" data-t="n_sites">Сайты</a>
-  <a href="#bots" data-t="n_bots">Боты</a>
-  <a href="#motion" data-t="n_motion">Моушн</a>
-  <a href="#services" data-t="n_svc">Услуги</a>
-  <a href="#contact" data-t="n_contact">Связь со мной</a>
+<div class="sheet" id="sheet" aria-hidden="true">
+  <nav class="sheet-links">
+    <a href="#sites"><i>01</i><span data-t="n_sites">Сайты</span></a>
+    <a href="#bots"><i>02</i><span data-t="n_bots">Боты</span></a>
+    <a href="#motion"><i>03</i><span data-t="n_motion">Моушн</span></a>
+    <a href="#design"><i>04</i><span data-t="n_design">Графика</span></a>
+    <a href="#about"><i>05</i><span data-t="n_about">Обо мне</span></a>
+    <a href="#services"><i>06</i><span data-t="n_svc">Услуги</span></a>
+    <a href="#contact"><i>07</i><span data-t="n_contact">Связь со мной</span></a>
+  </nav>
+  <div class="sheet-foot">
+    <a class="btn" href="https://t.me/lethevx" target="_blank" rel="noopener">Telegram</a>
+    <a class="btn l" href="https://wa.me/77020516535" target="_blank" rel="noopener">WhatsApp</a>
+  </div>
 </div>
 
 <main>
@@ -384,6 +399,8 @@ secs.forEach(s=>s&&sio.observe(s));
 /* mobile menu */
 $('#burger').addEventListener('click',()=>document.body.classList.toggle('menu'));
 $$('#sheet a').forEach(a=>a.addEventListener('click',()=>document.body.classList.remove('menu')));
+addEventListener('keydown',e=>{if(e.key==='Escape')document.body.classList.remove('menu')});
+matchMedia('(min-width:901px)').addEventListener('change',e=>{if(e.matches)document.body.classList.remove('menu')});
 
 /* clock (Astana) */
 const tick=()=>{try{$('#time').textContent=new Date().toLocaleTimeString('ru-RU',{timeZone:'Asia/Almaty',hour:'2-digit',minute:'2-digit',second:'2-digit'})}catch(e){}};tick();setInterval(tick,1000);
@@ -414,7 +431,7 @@ const KZ={n_about:'Мен туралы',n_sites:'Сайттар',n_bots:'Бот�
  c_ksm:'Шыны мен айна өндірісінің сайты: каталог, калькулятор, кабинет',c_gen:'Оқушылар мен студенттерге арналған хакатондар мен ивенттер платформасы',t_events:'Іс-шаралар',c_gen1:'Бірінші нұсқа: тіркелуі мен кабинеті бар хакатон сайты',v1:'v1',t_profiles:'Профильдер',c_qt:'Тендерлерді іздеу және бағалау платформасы',c_mer:'Университетке түсуге арналған навигатор',
  h_bots:'Telegram-боттар',c_qtbot:'Тендерді компанияға қарай бағалап, сандары бар карточкамен жауап береді',c_genbot:'Хакатон боты: кабинет, мерзімдер және жауаптар бір батырмада',
  h_motion:'Моушн',h_motion_s:'Instagram-да 30 күнде 147 мың қаралым · 1 184 жазылушы · @genesis.studio.kz',sound:'дыбыспен',m_promo:'Промо-ролик',
- h_design:'Графика',h_design_s:'Genesis.exe үшін посттар, сторис, постерлер және стикерлер',
+ h_design:'Графика',h_design_s:'Genesis.exe үшін посттар, сторис, постерлер және стикерлер',n_design:'Графика',
  a1:'Стартаптар бойынша республикалық хакатон',a1v:'200-ден топ-6',a2:'Әлем чемпионаты және Global Pitch',a2v:'Македония',a3v:'Спикер',a4:'«Дарын» РҒПО',a4v:'1-орын',a6:'Ағылшын тілі',
  h_svc_s:'Нақты баға міндетке байланысты — қысқа әңгімеден кейін айтамын.',
  s1:'Лендинг',s1d:'Бір ұсынысқа арналған бір бет: акция, қызмет немесе іс-шара',s1p:'100 000 ₸-ден',
